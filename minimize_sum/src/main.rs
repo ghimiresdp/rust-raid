@@ -56,3 +56,20 @@ fn main() {
 
     println!("Minimum Spending is: {}", minimize_sum(x, pick))
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::minimize_sum;
+
+    #[test]
+    fn works(){
+        assert_eq!(minimize_sum(vec![190, 200, 450, 499, 358, 160], 3), 849);
+        assert_eq!(minimize_sum(vec![190, 200, 450, 499, 358, 160], 4), 1049);
+    }
+    
+    #[test]
+    #[should_panic]
+    fn panics(){
+        minimize_sum(vec![190, 200, 450, 499, 358, 160], 7);
+    }
+}
