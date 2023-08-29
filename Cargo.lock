@@ -3,5 +3,13 @@
 version = 3
 
 [[package]]
+name = "lib"
+version = "0.1.0"
+
+[[package]]
 name = "minimize_sum"
+version = "0.1.0"
+
+[[package]]
+name = "web"
 version = "0.1.0"
