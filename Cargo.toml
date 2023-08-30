@@ -1,4 +1,4 @@
 [workspace]
 resolver = "2"
 
-members = ["core", "lib", "web"]
+members = ["easy", "corepkg", "web"]
