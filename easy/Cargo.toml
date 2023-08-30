@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+corepkg = {path = "../corepkg"}
 
 [[bin]]
 name = "minimize_sum"
@@ -18,3 +19,7 @@ path = "src/practical_number.rs"
 [[bin]]
 name = "fib"
 path = "src/fib.rs"
+
+[[bin]]
+name = "consecutive"
+path = "src/consecutive_groups.rs"
