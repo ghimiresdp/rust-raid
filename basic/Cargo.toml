@@ -9,16 +9,20 @@ edition = "2021"
 _lib = {path = "../_lib"}
 
 [[bin]]
-name = "minimize_sum"
-path = "src/minimize_sum.rs"
+name = "fib"
+path = "src/fib.rs"
 
 [[bin]]
 name = "practical_number"
 path = "src/practical_number.rs"
 
 [[bin]]
-name = "fib"
-path = "src/fib.rs"
+name = "gcd"
+path = "src/gcd.rs"
+
+[[bin]]
+name = "minimize_sum"
+path = "src/minimize_sum.rs"
 
 [[bin]]
 name = "consecutive"

@@ -15,3 +15,4 @@ cargo run --bin practical_number
 
 1. [Nth item of a Fibonacci Series](src/fib.rs) - `fib`
 2. [Practical Number](src/practical_number.rs) - `practical_number`
+3. [Greatest Common Divisor](src/gcd.rs) - `gcd`
