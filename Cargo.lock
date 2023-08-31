@@ -3,14 +3,14 @@
 version = 3
 
 [[package]]
-name = "corepkg"
+name = "core_pkg"
 version = "0.1.0"
 
 [[package]]
 name = "minimize_sum"
 version = "0.1.0"
 dependencies = [
- "corepkg",
+ "core_pkg",
 ]
 
 [[package]]

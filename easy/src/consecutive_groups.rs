@@ -14,9 +14,9 @@
  *   total number of groups to be created is 2.
  *
  */
-extern crate corepkg;
+extern crate core_pkg;
 
-use corepkg::input;
+use core_pkg::input;
 
 fn find_groups(mut list: Vec<usize>) -> usize {
     let mut sets = 1;
@@ -50,7 +50,7 @@ mod test {
     }
 
     #[test]
-    fn correct_if_unordered(){
+    fn correct_with_unordered(){
         assert_eq!(find_groups(vec![1, 14,2,12,3,9,15,10,8, 13]), 3)
     }
 }

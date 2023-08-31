@@ -1,5 +1,5 @@
 [package]
-name = "corepkg"
+name = "core_pkg"
 version = "0.1.0"
 edition = "2021"
 
