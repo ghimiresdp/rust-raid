@@ -1,4 +1,4 @@
 [workspace]
 resolver = "2"
 
-members = ["easy", "core_pkg", "web"]
+members = [ "_lib", "basic", "mid", "pro"]

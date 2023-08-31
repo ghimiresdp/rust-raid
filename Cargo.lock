@@ -3,16 +3,20 @@
 version = 3
 
 [[package]]
-name = "core_pkg"
+name = "_lib"
 version = "0.1.0"
 
 [[package]]
-name = "minimize_sum"
+name = "basic"
 version = "0.1.0"
 dependencies = [
- "core_pkg",
+ "_lib",
 ]
 
 [[package]]
-name = "web"
+name = "mid"
+version = "0.1.0"
+
+[[package]]
+name = "pro"
 version = "0.1.0"

@@ -14,9 +14,7 @@
  *   total number of groups to be created is 2.
  *
  */
-extern crate core_pkg;
-
-use core_pkg::input;
+use _lib::input;    // core library for this repo
 
 fn find_groups(mut list: Vec<usize>) -> usize {
     let mut sets = 1;

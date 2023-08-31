@@ -1,32 +1,9 @@
 # rust-challenges
 
-This is a repository for Rust learners.
+This is a repository for Rust learners as well as coding challenge seekers.
 
-The basic file structure for the project is as follows:
-
-```shell
-workspace
-├── Cargo.lock
-├── Cargo.toml
-├── core
-│   ├── Cargo.toml
-│   └── src
-│       ├── fib.rs
-│       ├── minimize_sum.rs
-│       └── practical_number.rs
-├── lib
-│   ├── Cargo.toml
-│   └── src
-│       └── main.rs
-└── web
-    ├── Cargo.toml
-    └── src
-        └── main.rs
-```
-
-Each `cargo.toml` file contains multiple entries for binaries so that smaller challenges do not need new project and `cargo.toml` file.
-
-example:
+The repository contains 4 different packages with multiple binaries inside them.
+The binaries are specified in the respective `cargo.toml` file.
 
 ```toml
 [dependencies]
@@ -40,13 +17,31 @@ name = "practical_number"
 path = "src/practical_number.rs"
 ```
 
-To run any binary, you can run the following command
+## Table of Contents
+
+1. [Package: `_lib` (See contents)](_lib/)
+2. [Package: `basic` (See contents)](basic/)
+3. [Package: `mid` (See contents)](mid/)
+4. [Package: `pro` (See contents)](pro/)
+
+## Running binaries
+
+To run any binary, you can run the command `cargo run --bin <bin_name>`
+
+Example:
 
 ```shell
-cargo run --bin binary_name
+cargo run --bin practical_number
 ```
 
-To test programs, you can run the following command
+## Testing
+
+I have added test cases for each functions/challenges which will be beneficial
+for you to learn testing as well as test programs for errors.
+
+To test programs, you can run `cargo test` command.
+
+Example:
 
 ```shell
 cargo test

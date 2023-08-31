@@ -1,12 +1,12 @@
 [package]
-name = "minimize_sum"
+name = "basic"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-core_pkg = {path = "../core_pkg"}
+_lib = {path = "../_lib"}
 
 [[bin]]
 name = "minimize_sum"
