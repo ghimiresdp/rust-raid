@@ -8,5 +8,8 @@
         "**/Thumbs.db": true,
         // hide unnecessary target folder from view
         "target/": true,
-    }
+    },
+    "rust-analyzer.linkedProjects": [
+        ".\\design_patterns\\Cargo.toml"
+    ]
 }

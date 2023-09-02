@@ -1,6 +1,6 @@
 use std::io;
 
-fn fib(n: usize) -> usize {
+fn _fib(n: usize) -> usize {
     /*
     Recursive function
     It is much slower since it has overhead of function calling on each recursion.
@@ -8,7 +8,7 @@ fn fib(n: usize) -> usize {
     */
     return match n {
         1..=2 => 1 as usize,
-        _ => fib(n - 1) + fib(n - 2),
+        _ => _fib(n - 1) + _fib(n - 2),
     };
 }
 
@@ -47,6 +47,6 @@ fn main() {
     // println!(
     //     "The {}th number of the fibonacci series is: {}",
     //     input,
-    //     fib(input)
+    //     _fib(input)
     // );
 }

@@ -14,6 +14,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "design_patterns"
+version = "0.1.0"
+
+[[package]]
+name = "dsa"
+version = "0.1.0"
+
+[[package]]
 name = "mid"
 version = "0.1.0"
 
