@@ -17,12 +17,14 @@ name = "practical_number"
 path = "src/practical_number.rs"
 ```
 
-## Table of Contents
+## List of packages in this repository
 
-1. [Package: `_lib` (See contents)](_lib/)
-2. [Package: `basic` (See contents)](basic/)
-3. [Package: `mid` (See contents)](mid/)
-4. [Package: `pro` (See contents)](pro/)
+1. [`_lib` (See contents)](_lib/): Contains common methods used by all other packages
+2. [`basic` (See contents)](basic/): Contains Basic challenges
+3. [`mid` (See contents)](mid/): Contains Intermediate challenges
+4. [`pro` (See contents)](pro/): Contains Pro challenges
+5. [`design_patterns` (See contents)](design_patterns/): Contains Design Pattern examples
+6. [`dsa` (See contents)](dsa/): Contains Data Structures and Algorithm examples
 
 ## Running binaries
 
