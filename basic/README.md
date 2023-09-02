@@ -1,5 +1,12 @@
 # Rustlang Basic Challenges
 
+The Basic Challenge is generally created for the first-time rust user. Generally,
+this package do not install any other external libraries since the solutions
+that are seen in this package are relatively easier than other packages.
+
+However, some examples might include some packages since rust standard libraries
+might not be sufficient for all problems.
+
 To run each binary, you can run `cargo run` command.
 
 example:
