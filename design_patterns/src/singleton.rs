@@ -48,6 +48,7 @@ impl Display {
     }
 }
 
+// To execute the code, run: cargo run --bin singleton
 fn main() {
     println!("Displaying Singleton Data");
     Display::set_dimension(1920, 1080);
