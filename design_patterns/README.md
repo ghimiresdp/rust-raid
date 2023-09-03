@@ -14,7 +14,7 @@ Some of the design patterns and example code to use in software are as follows:
 
 1. [Singleton Pattern](src/singleton.rs)
 2. [Factory Pattern](src/factory.rs)
-3. [Builder Pattern]
+3. [Builder Pattern](src/builder.rs)
 4. [Decorator Pattern]
 5. [Observer Pattern]
 6. [Strategy Pattern]
