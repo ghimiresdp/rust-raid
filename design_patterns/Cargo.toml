@@ -20,3 +20,7 @@ path = "src/factory.rs"
 [[bin]]
 name = "builder"
 path = "src/builder.rs"
+
+[[bin]]
+name = "decorator"
+path = "src/decorator.rs"
