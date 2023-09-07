@@ -30,3 +30,7 @@ path = "src/decorator.rs"
 [[bin]]
 name = "observer"
 path = "src/observer.rs"
+
+[[bin]]
+name = "strategy"
+path = "src/strategy.rs"
