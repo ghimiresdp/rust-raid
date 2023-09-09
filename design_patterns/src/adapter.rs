@@ -86,7 +86,6 @@ mod my_orm {
 mod json_adapter {
     use super::my_orm::{Query, QueryTrait};
     use serde::Deserialize;
-    use serde_json::json;
 
     // adapter for json data
     pub(crate) trait QueryUtilTrait {
@@ -106,7 +105,10 @@ mod json_adapter {
             match query_adapter {
                 Ok(adapter) => {
                     let mut q = Query::db_query(adapter._from.as_str());
-                    let q = q.select(adapter._select.iter().map(|v| v.as_str()).collect());
+                    q.select(adapter._select.iter().map(|v| v.as_str()).collect());
+                    for condition in adapter._where {
+                        q.filter(&condition);
+                    }
                     Ok(q.evaluate())
                 }
                 Err(err) => {
