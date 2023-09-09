@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+console="0.15.7"
 rand="0.8.5"
 _lib={path = "../_lib"}
 
@@ -34,3 +35,7 @@ path = "src/observer.rs"
 [[bin]]
 name = "strategy"
 path = "src/strategy.rs"
+
+[[bin]]
+name = "command"
+path = "src/command.rs"
