@@ -6,9 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-console="0.15.7"
-rand="0.8.5"
-_lib={path = "../_lib"}
+console = "0.15.7"
+rand = "0.8.5"
+serde = { version = "1.0.188", features=["derive"]}
+serde_json = "1.0.105"
+_lib = { path = "../_lib" }
 
 
 [[bin]]
@@ -39,3 +41,7 @@ path = "src/strategy.rs"
 [[bin]]
 name = "command"
 path = "src/command.rs"
+
+[[bin]]
+name = "adapter"
+path = "src/adapter.rs"
