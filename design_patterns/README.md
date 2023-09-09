@@ -19,7 +19,7 @@ Some of the design patterns and example code to use in software are as follows:
 5. [Observer Pattern](src/observer.rs)
 6. [Strategy Pattern](src/strategy.rs)
 7. [Command Pattern](src/command.rs)
-8. [Adapter Pattern]
+8. [Adapter Pattern](src/adapter.rs)
 9. [State Pattern]
 10. [Prototype Pattern]
 11. [Composite Pattern]
