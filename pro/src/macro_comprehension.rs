@@ -41,3 +41,20 @@ fn main() {
     let even_squared = comprehension!(foreach numbers; apply |x|{x*x}; where |&&x|{x%2==0});
     println!("Comprehension Output with filter: {:?}", even_squared);
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_squares() {
+        let original = (0..5).collect::<Vec<_>>();
+        let squares = comprehension!(foreach original; apply |x|{x * x});
+        assert_eq!(squares, vec![0, 1, 4, 9, 16])
+    }
+
+    #[test]
+    fn test_squares_with_filter() {
+        let original = (0..5).collect::<Vec<_>>();
+        let squares = comprehension!(foreach original; apply |x|{x * x}; where |&&x|{x % 2 == 0});
+        assert_eq!(squares, vec![0, 4, 16])
+    }
+}
