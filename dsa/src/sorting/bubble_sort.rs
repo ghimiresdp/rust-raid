@@ -57,3 +57,13 @@ fn main() {
 
     println!("Sorted data: {:?}", sorted);
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::bubble_sort;
+
+    #[test]
+    fn sort_success() {
+        assert_eq!(bubble_sort([1, 2, 5, 4, 3, 6].as_mut()), [1, 2, 3, 4, 5, 6])
+    }
+}
