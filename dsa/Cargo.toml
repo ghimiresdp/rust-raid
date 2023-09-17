@@ -7,6 +7,9 @@ edition = "2021"
 
 [dependencies]
 
+[[bin]]
+name = "linear_search"
+path = "src/searching/linear_search.rs"
 
 [[bin]]
 name = "bubble_sort"
