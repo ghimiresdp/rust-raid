@@ -19,3 +19,7 @@ path = "src/sorting/selection_sort.rs"
 [[bin]]
 name = "insertion_sort"
 path = "src/sorting/insertion_sort.rs"
+
+[[bin]]
+name = "quick_sort"
+path = "src/sorting/quick_sort.rs"
