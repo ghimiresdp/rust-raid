@@ -1,5 +1,3 @@
-use std::mem::swap;
-
 /**
  * Selection Sort
  *
