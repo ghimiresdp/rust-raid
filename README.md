@@ -19,12 +19,33 @@ path = "src/practical_number.rs"
 
 ## List of packages in this repository
 
-1. [`_lib` (See contents)](_lib/): Contains common methods used by all other packages
-2. [`basic` (See contents)](basic/): Contains Basic challenges
-3. [`mid` (See contents)](mid/): Contains Intermediate challenges
-4. [`pro` (See contents)](pro/): Contains Pro challenges
+1. [`_lib` (See contents)](_lib/) : Contains common methods used by all other packages
+
+2. [`basic` Challenges](basic/) : Contains Basic challenges
+
+3. [`mid`-level Challenges](mid/) : Contains Intermediate challenges
+
+4. [`pro` Challenges](pro/) : Contains Pro challenges
+
 5. [`design_patterns` (See contents)](design_patterns/): Contains Design Pattern examples
-6. [`dsa` (See contents)](dsa/): Contains Data Structures and Algorithm examples
+   1. [Singleton Pattern](design_patterns/src/singleton.rs)
+   2. [Factory Pattern](design_patterns/src/factory.rs)
+   3. [Builder Pattern](design_patterns/src/builder.rs)
+   4. [Decorator Pattern](design_patterns/src/decorator.rs)
+   5. [Observer Pattern](design_patterns/src/observer.rs)
+   6. [Strategy Pattern](design_patterns/src/strategy.rs)
+   7. [Command Pattern](design_patterns/src/command.rs)
+   8. [Adapter Pattern](design_patterns/src/adapter.rs)
+
+6. [Data Structure and Algorithms](dsa/): Contains Data Structures and Algorithm examples
+   1. Searching
+      1. [Linear Searching](dsa/src/searching/linear_search.rs)
+      2. [Binary Searching](dsa/src/searching/binary_search.rs)
+   2. Sorting
+      1. [bubble sort](dsa/src/sorting/bubble_sort.rs)
+      2. [selection sort](dsa/src/sorting/selection_sort.rs)
+      3. [insertion sort](dsa/src/sorting/insertion_sort.rs)
+      4. [quick sort](dsa/src/sorting/quick_sort.rs)
 
 ## Running binaries
 
