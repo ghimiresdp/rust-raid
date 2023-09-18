@@ -1,5 +1,5 @@
+use _lib::input;
 use std::cmp::Ordering::{Equal, Greater, Less};
-use std::f32::consts::E;
 /**
 * Binary Search
 *
@@ -7,7 +7,10 @@ use std::f32::consts::E;
 * out elements of the item.
 *
 * It first compares middle most item of an array and recursively divides the
-* array into sub-arrays until it finds out the exact element.
+* array into sub-arrays virtually until it finds out the exact element.
+*
+* It works recursively and non-recursively, but as recursive functions are not
+* good for larger arrays, we implemented while loop.
 *
 * REMEMBER!!: The binary search works only on the sorted array. If an array is
 * not sorted, we must sort it before we implement this algorithm.
@@ -23,33 +26,33 @@ use std::f32::consts::E;
 
 **/
 
-fn binary_search(array: &mut [i32], item: i32, start_index: usize) -> Result<usize, i8> {
-    println!("{:?}", array);
-    let mid_index = array.len() / 2;
-    if array.len() == 1 && array[0] != item {
-        // not existent
-        return Err(1);
+fn binary_search(array: &mut [i32], item: i32) -> Option<usize> {
+    array.sort();
+    println!("Sorted array is: {:?}", array);
+    let mut left = 0;
+    let mut right = array.len() - 1;
+
+    while left <= right {
+        let mid = (left + right) / 2;
+        match array[mid].cmp(&item) {
+            Less => left = mid + 1,
+            Equal => return Some(mid),
+            Greater => right = mid - 1,
+        }
     }
-    if item < array[0] || item > array[array.len() - 1] {
-        // not in range
-        return Err(-1);
-    }
-    return match array[mid_index].cmp(&item) {
-        Less => binary_search(
-            array[mid_index + 1..].as_mut(),
-            item,
-            start_index + mid_index + 1,
-        ),
-        Equal => Ok(start_index + mid_index),
-        Greater => binary_search(array[..mid_index].as_mut(), item, start_index),
-    };
+    return None;
 }
+
 fn main() {
     let mut arr_1 = [1, 4, 7, 8, 9, 10, 11, 12, 15, 20];
-    arr_1.sort();
-    let search_item = 12;
-    let idx = binary_search(arr_1.as_mut(), search_item, 0).unwrap();
-    println!("The item {} is at index: {}", search_item, idx);
+    let search_item = input("Enter a number to search")
+        .trim()
+        .parse::<i32>()
+        .unwrap();
+    match binary_search(arr_1.as_mut(), search_item) {
+        Some(idx) => println!("The item {} is at index: {}", search_item, idx),
+        None => println!("The item {} does not exist in the array", search_item),
+    }
 }
 #[cfg(test)]
 mod tests {
@@ -57,11 +60,11 @@ mod tests {
 
     #[test]
     fn search_ok() {
-        assert_eq!(binary_search([1, 4, 2, 5, 7].as_mut(), 5, 0), Ok(3))
+        assert_eq!(binary_search([1, 4, 2, 5, 7].as_mut(), 5), Some(3))
     }
 
     #[test]
     fn search_err() {
-        assert_eq!(binary_search([1, 4, 2, 5, 7].as_mut(), 8, 0), Err(-1))
+        assert_eq!(binary_search([1, 4, 2, 5, 7].as_mut(), 8), None)
     }
 }
