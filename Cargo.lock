@@ -46,6 +46,9 @@ dependencies = [
 [[package]]
 name = "dsa"
 version = "0.1.0"
+dependencies = [
+ "_lib",
+]
 
 [[package]]
 name = "encode_unicode"

@@ -52,19 +52,19 @@ impl Computer {
         }
     }
 
-    fn setRAM(&mut self, size_mb: u32) {
+    fn set_ram(&mut self, size_mb: u32) {
         self.memory = Some(size_mb);
     }
-    fn setDisplay(&mut self, variant: Display) {
+    fn set_display(&mut self, variant: Display) {
         self.display = Some(variant);
     }
-    fn setKeyboard(&mut self, variant: KeyboardVariant) {
+    fn set_keyboard(&mut self, variant: KeyboardVariant) {
         self.keyboard = Some(variant)
     }
 
     fn boot(&self) {
         match self.memory {
-            Some(size) => println!("The computer boots with {size}MB of RAM"),
+            Some(size) => println!("The computer boots with {:?} processor and {size}MB of memory", self.processor),
             None => println!("The Computer failed to boot!! CODE: NO_MEMORY_FOUND"),
         }
     }
@@ -93,16 +93,16 @@ fn main() {
 
     // set RAM
     c.boot(); // The Computer failed to boot!! CODE: NO_MEMORY_FOUND
-    c.setRAM(4096);
+    c.set_ram(4096);
     c.boot(); // The computer boots with 4096MB of RAM
 
     // attach keyboard
     c.input('A'); // No Keyboard found !!
-    c.setKeyboard(KeyboardVariant::Mechanical);
+    c.set_keyboard(KeyboardVariant::Mechanical);
     c.input('A'); // 'A' pressed on the Mechanical keyboard
 
     // attach monitor
     c.display_resolution(); // NO DISPLAY FOUND !!
-    c.setDisplay(Display::FHD);
+    c.set_display(Display::FHD);
     c.display_resolution(); // DISPLAY RESOLUTION IS: 1920 X 1080
 }

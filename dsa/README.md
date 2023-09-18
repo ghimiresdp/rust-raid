@@ -2,6 +2,11 @@
 
 ## Table of Contents
 
+### Searching
+
+1. [Linear Search](src/searching/linear_search.rs)
+2. [Binary Search](src/searching/binary_search.rs)
+
 ### Sorting
 
 1. [Bubble Sort](src/sorting/bubble_sort.rs)
