@@ -21,11 +21,11 @@ path = "src/practical_number.rs"
 
 1. [`_lib` (See contents)](_lib/) : Contains common methods used by all other packages
 
-2. [`basic` Challenges](basic/) : Contains Basic challenges
+2. [`basic` Challenges](challenge_basic/) : Contains Basic challenges
 
-3. [`mid`-level Challenges](mid/) : Contains Intermediate challenges
+3. [`mid`-level Challenges](challenge_mid/) : Contains Intermediate challenges
 
-4. [`pro` Challenges](pro/) : Contains Pro challenges
+4. [`pro` Challenges](challenge_pro/) : Contains Pro challenges
 
 5. [`design_patterns` (See contents)](design_patterns/): Contains Design Pattern examples
    1. [Singleton Pattern](design_patterns/src/singleton.rs)

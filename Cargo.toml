@@ -1,4 +1,11 @@
 [workspace]
 resolver = "2"
 
-members = [ "_lib", "basic", "design_patterns", "dsa", "mid", "pro"]
+members = [
+    "_lib",
+    "challenge_basic",
+    "challenge_mid",
+    "challenge_pro",
+    "design_patterns",
+    "dsa",
+]
