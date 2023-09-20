@@ -13,10 +13,10 @@
  *
  * if z is the resultant matrix,
  *
- * z[0][0] = x[0][0] * y[0][0] + x[0][1] * y[1][0] = 1 + 4 = 5
- * z[0][1] = x[0][0] * y[0][1] + x[0][1] * y[1][1] = 3 + 2 = 5
- * z[1][0] = x[1][0] * y[0][0] + x[1][1] * y[1][0] = 3 + 8 = 11
- * z[1][1] = x[1][0] * y[0][1] + x[1][1] * y[1][1] = 9 + 4 = 13
+ * step 1:   z[0][0] = x[0][0] * y[0][0] + x[0][1] * y[1][0] = 1 + 4 = 5
+ * step 2:   z[0][1] = x[0][0] * y[0][1] + x[0][1] * y[1][1] = 3 + 2 = 5
+ * step 3:   z[1][0] = x[1][0] * y[0][0] + x[1][1] * y[1][0] = 3 + 8 = 11
+ * step 4:   z[1][1] = x[1][0] * y[0][1] + x[1][1] * y[1][1] = 9 + 4 = 13
  *
  * In rustlang, matrix multiplication is fairly tricky since borrowing will
  * occur in each loop. We need to clone the variable if the borrow occurs before
@@ -24,6 +24,8 @@
  */
 
 fn mat_mul(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    // this method should work on any size of the matrices that are compatible
+    // limitations due to hardware are not considered in the solution.
     if a[0].len() != b.len() {
         panic!("Matrix dimensions are incompatible")
     }
@@ -32,8 +34,12 @@ fn mat_mul(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let mut new_matrix: Vec<Vec<i32>> = vec![vec![0; i]; j];
     for x in 0..i {
         for y in 0..j {
+
+            // we first determine respective row and column to perform operation
             let row_x = a[x].clone();
             let col_y: Vec<i32> = b.iter().map(|v| v[y]).collect();
+
+            // the zip, map(a*b) and reduce(sum) will perform steps 1 to 4 in each loop.
             new_matrix[x][y] = row_x
                 .iter()
                 .zip(col_y.iter())
