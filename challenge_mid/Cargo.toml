@@ -11,3 +11,7 @@ edition = "2021"
 [[bin]]
 name="c1_matmul"
 path="src/c1_matmul.rs"
+
+[[bin]]
+name="c2_linear_regression"
+path="src/c2_linear_regression.rs"
