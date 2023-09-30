@@ -15,3 +15,7 @@ path="src/c1_matmul.rs"
 [[bin]]
 name="c2_linear_regression"
 path="src/c2_linear_regression.rs"
+
+[[bin]]
+name="c3_comprehension"
+path="src/c3_comprehension.rs"
