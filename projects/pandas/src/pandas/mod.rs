@@ -151,21 +151,23 @@ impl DataFrame {
             .map(|h| format!("{:^20}", h.name))
             .collect::<Vec<String>>()
             .join(" | ");
+        println!("{}", "-".repeat(titles.len()));
         println!("{titles}");
         println!("{}", "-".repeat(titles.len()));
         for idx in 0..n {
-            let row = self
-                .get_item_at(idx)
-                .iter()
-                .map(|_cell| match _cell {
-                    Some(cell) => format!("{:<20}", cell.to_string()),
-                    None => String::from(" ".repeat(20)),
-                })
-                .collect::<Vec<String>>()
-                .join(" | ");
-
-            println!("{}", row);
+            println!(
+                "{}",
+                self.get_item_at(idx)
+                    .iter()
+                    .map(|_cell| match _cell {
+                        Some(cell) => format!("{:<20}", cell.to_string()),
+                        None => String::from(" ".repeat(20)),
+                    })
+                    .collect::<Vec<String>>()
+                    .join(" | ")
+            );
         }
+        println!("{}", "-".repeat(titles.len()));
     }
 }
 
