@@ -1,18 +1,11 @@
-use std::{
-    collections::HashMap,
-    fmt::{format, Display},
-    fs,
-    ops::Index,
-};
+use std::{collections::HashMap, fmt::Display, fs, ops::Index};
 
 #[derive(Debug, Clone)]
 pub(crate) enum DType {
     Bool,
     Int,
     Float,
-    Text,
-    Csv,
-    Map,
+    Str,
 }
 
 #[derive(Debug, Clone)]
@@ -20,9 +13,7 @@ pub(crate) enum Cell {
     Bool(bool),
     Int(isize),
     Float(f64),
-    Text(String),
-    Csv(Vec<Cell>),
-    Map(HashMap<String, Cell>),
+    Str(String),
 }
 impl Cell {
     pub(crate) fn to_string(&self) -> String {
@@ -30,9 +21,7 @@ impl Cell {
             Cell::Bool(v) => v.to_string(),
             Cell::Int(v) => v.to_string(),
             Cell::Float(v) => v.to_string(),
-            Cell::Text(v) => v.to_string(),
-            Cell::Csv(v) => format!("CSV"),
-            Cell::Map(v) => format!("MAP"),
+            Cell::Str(v) => v.to_string(),
         }
     }
 }
@@ -61,10 +50,10 @@ impl Index<usize> for Series {
 }
 
 impl Series {
-    pub(crate) fn new(title: String, data: Vec<String>) -> Self {
+    pub(crate) fn new(data: Vec<String>) -> Self {
         Self(
             data.iter()
-                .map(|v| Some(Cell::Text(v.to_string())))
+                .map(|v| Some(Cell::Str(v.to_string())))
                 .collect(),
         )
     }
@@ -99,18 +88,19 @@ impl DataFrame {
         }
     }
     pub(crate) fn shape(&self) -> (usize, usize) {
-        // row, col
         let first_header = self.headers.get(0).unwrap().name.clone();
-        let _series = self.data.get(&first_header).unwrap();
-        println!("{:?}", _series);
-        (_series.len(), self.headers.len())
+
+        match self.get(first_header) {
+            Some(s) => (s.len(), self.headers.len()),
+            None => (0, self.headers.len()),
+        }
     }
     pub(crate) fn from_mapping(data: HashMap<String, Vec<String>>) -> Self {
         let headers = (&data)
             .keys()
             .into_iter()
             .map(|k| Header {
-                d_type: DType::Text,
+                d_type: DType::Str,
                 name: k.to_string(),
             })
             .collect();
@@ -118,7 +108,7 @@ impl DataFrame {
             headers: headers,
             data: data
                 .iter()
-                .map(|(k, v)| (k.to_string(), Series::new(k.to_string(), v.to_owned())))
+                .map(|(k, v)| (k.to_string(), Series::new(v.to_owned())))
                 .collect(),
         }
     }
@@ -127,8 +117,15 @@ impl DataFrame {
             panic!("Row dimension and header dimension mismatch")
         }
         self.headers.iter().zip(row).for_each(|(header, item)| {
-            self.data.get_mut(&header.name).unwrap().push(item);
+            match self.data.get_mut(&header.name) {
+                Some(s) => s.push(item),
+                None => println!("Header: {}, value: {:?}", header.name, item),
+            };
         });
+    }
+
+    fn get(&self, title: String) -> Option<&Series> {
+        self.data.get(&title)
     }
 
     pub(crate) fn get_item_at(&self, index: usize) -> Vec<Option<Cell>> {
@@ -189,7 +186,7 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
                 true => name.trim().to_string(),
                 false => idx.to_string(),
             },
-            d_type: DType::Text,
+            d_type: DType::Str,
         })
         .collect();
     if headers {
@@ -198,7 +195,7 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
     lines.iter().for_each(|line| {
         let row = line
             .split(",")
-            .map(|v| Some(Cell::Text(v.trim().to_string())))
+            .map(|v| Some(Cell::Str(v.trim().to_string())))
             .collect::<Vec<Option<Cell>>>();
         df.push(row)
     });
