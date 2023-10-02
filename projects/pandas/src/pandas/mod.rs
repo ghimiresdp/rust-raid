@@ -95,7 +95,11 @@ impl DataFrame {
             None => (0, self.headers.len()),
         }
     }
-    pub(crate) fn new(data: HashMap<String, Vec<String>>) -> Self {
+    pub(crate) fn new<T>(data: T) -> Self
+    where
+        T: IntoIterator<Item = (String, Vec<String>)>,
+    {
+        let data: HashMap<String, Vec<String>> = HashMap::from_iter(data);
         let headers = (&data)
             .keys()
             .into_iter()
@@ -188,7 +192,7 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
                 true => (name.trim().to_string(), vec![]),
                 false => (idx.to_string(), vec![]),
             })
-            .collect(),
+            .collect::<Vec<(String, Vec<String>)>>(),
     );
     if headers {
         lines.remove(0);
