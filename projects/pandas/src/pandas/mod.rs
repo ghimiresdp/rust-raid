@@ -5,7 +5,7 @@ use std::{
     ops::Index,
 };
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) enum DType {
     Bool,
     Int,
@@ -15,7 +15,7 @@ pub(crate) enum DType {
     Map,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) enum Cell {
     Bool(bool),
     Int(isize),
@@ -43,13 +43,13 @@ impl Display for Cell {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) struct Header {
     name: String,
     d_type: DType,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) struct Series(Vec<Option<Cell>>);
 
 impl Index<usize> for Series {
@@ -71,12 +71,12 @@ impl Series {
     pub(crate) fn len(&self) -> usize {
         self.0.len()
     }
-    pub(crate) fn push(&mut self, element: Option<Cell>) {
-        self.0.push(element)
+    pub(crate) fn push(&mut self, item: Option<Cell>) {
+        self.0.push(item)
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub(crate) struct DataFrame {
     pub(crate) headers: Vec<Header>,
     pub(crate) data: HashMap<String, Series>,
@@ -122,6 +122,21 @@ impl DataFrame {
                 .collect(),
         }
     }
+    pub(crate) fn push(&mut self, row: Vec<Option<Cell>>) {
+        if row.len() != self.headers.len() {
+            panic!("Row dimension and header dimension mismatch")
+        }
+        self.headers.iter().zip(row).for_each(|(header, item)| {
+            self.data.get_mut(&header.name).unwrap().push(item);
+        });
+    }
+
+    pub(crate) fn get_item_at(&self, index: usize) -> Vec<Option<Cell>> {
+        self.headers
+            .iter()
+            .map(|header| self.data.get(&header.name).unwrap()[index].clone())
+            .collect()
+    }
 
     pub(crate) fn describe(&self) {
         self.headers.iter().for_each(|item| {
@@ -141,19 +156,17 @@ impl DataFrame {
         println!("{titles}");
         println!("{}", "-".repeat(titles.len()));
         for idx in 0..n {
-            // let header = self.headers[idx].name.clone();
+            let row = self
+                .get_item_at(idx)
+                .iter()
+                .map(|_cell| match _cell {
+                    Some(cell) => format!("{:<20}", cell.to_string()),
+                    None => String::from(" ".repeat(20)),
+                })
+                .collect::<Vec<String>>()
+                .join(" | ");
 
-            // let row = self
-            //     .headers
-            //     .iter()
-            //     .map(|h| match self.data.get(&h.name).unwrap()[idx] {
-            //         Some(cell) => format!("{:<20}", cell.to_string()),
-            //         None => String::from(" ".repeat(20)),
-            //     })
-            //     .collect::<Vec<String>>()
-            //     .join(" | ");
-
-            // println!("{}", row);
+            println!("{}", row);
         }
     }
 }
@@ -185,24 +198,9 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
     lines.iter().for_each(|line| {
         let row = line
             .split(",")
-            .map(|v| v.trim().to_string())
-            .collect::<Vec<String>>();
-        if row.len() != df.headers.len() {
-            panic!("Incorrect CSV Formatting");
-        }
-        df.headers.iter().zip(row).for_each(|(header, data)| {
-            // df;
-        })
+            .map(|v| Some(Cell::Text(v.trim().to_string())))
+            .collect::<Vec<Option<Cell>>>();
+        df.push(row)
     });
-    // df.headers.iter().for_each(|h| {
-    //     df.data.insert(h.name, vec![]);
-    // });
-    // lines.iter().for_each(|line| {
-    //     line.split(",").enumerate().for_each(|(idx, value)| {
-    //         df.data
-    //             .entry(df.headers[idx].name)
-    //             .and_modify(|v| v.push(Some(Cell::Text(value.trim().to_string()))));
-    //     })
-    // });
     df
 }
