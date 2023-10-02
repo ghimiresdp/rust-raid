@@ -1,5 +1,5 @@
 [package]
-name = "pro"
+name = "tinyscript"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 
 [[bin]]
-name = "ioscript"
-path = "ioscript/main.rs"
+name="pandas"
+path="src/main.rs"
