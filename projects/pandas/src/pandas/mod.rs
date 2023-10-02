@@ -118,7 +118,10 @@ impl DataFrame {
         }
         self.headers.iter().zip(row).for_each(|(header, item)| {
             match self.data.get_mut(&header.name) {
-                Some(s) => s.push(item),
+                Some(s) => {
+                    // println!("Series: {:?}", s);
+                    s.push(item);
+                }
                 None => println!("Header: {}, value: {:?}", header.name, item),
             };
         });
@@ -176,19 +179,18 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
         .collect();
 
     let mut df = DataFrame::new();
-    df.headers = lines
-        .get(0)
-        .unwrap()
-        .split(",")
-        .enumerate()
-        .map(|(idx, name)| Header {
-            name: match headers {
-                true => name.trim().to_string(),
-                false => idx.to_string(),
-            },
-            d_type: DType::Str,
-        })
-        .collect();
+    let mut df = DataFrame::from_mapping(
+        lines
+            .get(0)
+            .unwrap()
+            .split(",")
+            .enumerate()
+            .map(|(idx, name)| match headers {
+                true => (name.trim().to_string(), vec![]),
+                false => (idx.to_string(), vec![]),
+            })
+            .collect(),
+    );
     if headers {
         lines.remove(0);
     }
