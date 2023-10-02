@@ -7,6 +7,6 @@ edition = "2021"
 
 [dependencies]
 
-[[bin]]
-name = "ioscript"
-path = "ioscript/main.rs"
+# [[bin]]
+# name = "ioscript"
+# path = "ioscript/main.rs"
