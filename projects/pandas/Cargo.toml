@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 
 [[bin]]
-name="csv-utils"
+name="pandas"
 path="src/main.rs"
