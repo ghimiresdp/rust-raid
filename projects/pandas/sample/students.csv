@@ -1,5 +1,5 @@
-SN, First Name, Last Name, Age, CGPA
-1, John, Doe, 20, 3.81
-2, Jane, Doe, 19, 3.82
-3, Satoshi, Nakamoto, 21, 3.83
-4, Adam,,22, 3.84
+SN, First Name, Last Name, Age, CGPA, Graduated
+1, John, Doe, 20, 3.81, true
+2, Jane, Doe, 19, 3.82, 0
+3, Satoshi, Nakamoto, 21, 3.83, false
+4, Adam,,22, 3.84, 1

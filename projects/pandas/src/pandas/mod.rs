@@ -1,6 +1,6 @@
 use std::{collections::HashMap, fmt::Display, fs, ops::Index};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 pub(crate) enum DType {
     Bool,
     Int,
@@ -63,6 +63,41 @@ impl Series {
     pub(crate) fn push(&mut self, item: Option<Cell>) {
         self.0.push(item)
     }
+
+    pub(crate) fn as_type(&mut self, d_type: DType) {
+        self.0 = self
+            .0
+            .iter()
+            .map(|v| match v {
+                Some(cell) => match d_type {
+                    DType::Bool => Some(Cell::Bool(match cell {
+                        Cell::Bool(v) => v.to_owned(),
+                        Cell::Int(v) => v.to_owned() > 0,
+                        Cell::Float(v) => v.to_owned() > 0f64,
+                        Cell::Str(v) => match v.to_owned().as_str() {
+                            "0" => false,                    // parse 0 as false
+                            "1" => true,                     // parse 1 as true
+                            v => v.parse::<bool>().unwrap(), // parse true or false
+                        },
+                    })),
+                    DType::Int => Some(Cell::Int(match cell {
+                        Cell::Bool(v) => v.to_owned() as isize,
+                        Cell::Int(v) => v.to_owned(),
+                        Cell::Float(v) => v.to_owned() as isize,
+                        Cell::Str(v) => v.to_owned().parse::<isize>().unwrap(),
+                    })),
+                    DType::Float => Some(Cell::Float(match cell {
+                        Cell::Bool(v) => (v.to_owned() as isize) as f64,
+                        Cell::Int(v) => v.to_owned() as f64,
+                        Cell::Float(v) => v.to_owned(),
+                        Cell::Str(v) => v.to_owned().parse::<f64>().unwrap(),
+                    })),
+                    DType::Str => Some(Cell::Str(format!("{}", cell))),
+                },
+                None => None,
+            })
+            .collect()
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -89,15 +124,14 @@ impl DataFrame {
             None => (0, self.headers.len()),
         }
     }
-    pub(crate) fn new<T>(data: T) -> Self
+    pub(crate) fn new<T: Clone>(data: T) -> Self
     where
         T: IntoIterator<Item = (String, Vec<String>)>,
     {
-        let data: HashMap<String, Vec<String>> = HashMap::from_iter(data);
-        let headers = (&data)
-            .keys()
+        let headers = data
+            .clone()
             .into_iter()
-            .map(|k| Header {
+            .map(|(k, _)| Header {
                 d_type: DType::Str,
                 name: k.to_string(),
             })
@@ -105,7 +139,7 @@ impl DataFrame {
         Self {
             headers: headers,
             data: data
-                .iter()
+                .into_iter()
                 .map(|(k, v)| (k.to_string(), Series::new(v.to_owned())))
                 .collect(),
         }
@@ -123,6 +157,21 @@ impl DataFrame {
                 None => println!("Header: {}, value: {:?}", header.name, item),
             };
         });
+    }
+
+    pub(crate) fn as_type<T>(&mut self, titles: T)
+    where
+        T: IntoIterator<Item = (String, DType)>,
+    {
+        titles.into_iter().for_each(|(title, d_type)| {
+            match self.headers.iter().position(|h| h.name == title) {
+                Some(idx) => {
+                    self.data.entry(title).and_modify(|f| f.as_type(d_type));
+                    self.headers[idx].d_type = d_type;
+                }
+                None => panic!("Trying to access non-existent column"),
+            };
+        })
     }
 
     fn get(&self, title: String) -> Option<&Series> {

@@ -3,6 +3,8 @@ use std::collections::HashMap;
 
 use pandas as pd;
 
+use crate::pd::DType;
+
 // When running this project from the directory other than the workspace
 // directory, do not forget to change the relative path below
 fn main() {
@@ -30,8 +32,18 @@ fn main() {
 
     // reading from a csv file
     println!("\n\n");
-    let df2 = pd::read_csv("projects/pandas/sample/students.csv", true);
-    df2.describe();
+    let mut df2 = pd::read_csv("projects/pandas/sample/students.csv", true);
     df2.head(5);
+    df2.describe();
     println!("Shape of the dataframe 2: {:?}", df2.shape());
+
+    // Data Processing
+    df2.as_type([
+        (String::from("SN"), DType::Int),
+        (String::from("Age"), DType::Int),
+        (String::from("CGPA"), DType::Float),
+        (String::from("Graduated"), DType::Bool),
+    ]);
+    df2.head(5);
+    df2.describe();
 }
