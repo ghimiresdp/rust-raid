@@ -81,12 +81,6 @@ impl Index<String> for DataFrame {
 }
 
 impl DataFrame {
-    pub(crate) fn empty() -> Self {
-        Self {
-            headers: vec![],
-            data: HashMap::new(),
-        }
-    }
     pub(crate) fn shape(&self) -> (usize, usize) {
         let first_header = self.headers.get(0).unwrap().name.clone();
 
