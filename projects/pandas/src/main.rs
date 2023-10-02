@@ -7,7 +7,7 @@ use pandas as pd;
 // directory, do not forget to change the relative path below
 fn main() {
     // creating own dataframe
-    let df1 = pd::DataFrame::from_mapping(HashMap::from_iter([
+    let df1 = pd::DataFrame::new(HashMap::from_iter([
         (
             String::from("First Name"),
             vec!["John", "Jane", "Satoshi", "Adam"]

@@ -81,7 +81,7 @@ impl Index<String> for DataFrame {
 }
 
 impl DataFrame {
-    pub(crate) fn new() -> Self {
+    pub(crate) fn empty() -> Self {
         Self {
             headers: vec![],
             data: HashMap::new(),
@@ -95,7 +95,7 @@ impl DataFrame {
             None => (0, self.headers.len()),
         }
     }
-    pub(crate) fn from_mapping(data: HashMap<String, Vec<String>>) -> Self {
+    pub(crate) fn new(data: HashMap<String, Vec<String>>) -> Self {
         let headers = (&data)
             .keys()
             .into_iter()
@@ -178,8 +178,7 @@ pub(crate) fn read_csv(path: &str, headers: bool) -> DataFrame {
         .map(|v| v.to_string())
         .collect();
 
-    let mut df = DataFrame::new();
-    let mut df = DataFrame::from_mapping(
+    let mut df = DataFrame::new(
         lines
             .get(0)
             .unwrap()
