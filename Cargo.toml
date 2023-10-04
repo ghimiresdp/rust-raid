@@ -8,5 +8,6 @@ members = [
     "challenge_pro",
     "design_patterns",
     "dsa",
-    "projects/pandas"
+    "projects/pandas",
+    "projects/snake",
 ]
