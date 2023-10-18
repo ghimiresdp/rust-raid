@@ -27,3 +27,7 @@ path = "src/minimize_sum.rs"
 [[bin]]
 name = "consecutive"
 path = "src/consecutive_groups.rs"
+
+[[bin]]
+name = "repeat"
+path = "src/repeat.rs"
