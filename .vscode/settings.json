@@ -10,6 +10,10 @@
         "target/": true,
     },
     "rust-analyzer.linkedProjects": [
-        ".\\design_patterns\\Cargo.toml"
+        ".\\design_patterns\\Cargo.toml",
+        ".\\projects\\snake\\Cargo.toml"
+    ],
+    "cSpell.words": [
+        "egui"
     ]
 }
