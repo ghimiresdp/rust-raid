@@ -3,9 +3,7 @@ resolver = "2"
 
 members = [
     "_lib",
-    "challenge_basic",
-    "challenge_mid",
-    "challenge_pro",
+    "challenges",
     "design_patterns",
     "dsa",
     "projects/pandas",
