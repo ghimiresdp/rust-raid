@@ -1490,14 +1490,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
 
 [[package]]
-name = "minisql"
-version = "0.1.0"
-dependencies = [
- "_lib",
- "clap",
-]
-
-[[package]]
 name = "miniz_oxide"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2302,6 +2294,13 @@ dependencies = [
 [[package]]
 name = "tinyscript"
 version = "0.1.0"
+
+[[package]]
+name = "tinysql"
+version = "0.1.0"
+dependencies = [
+ "clap",
+]
 
 [[package]]
 name = "tinyvec"

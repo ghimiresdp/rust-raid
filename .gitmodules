@@ -1,0 +1,3 @@
+[submodule "projects/tinysql"]
+	path = projects/tinysql
+	url = git@github.com:ghimiresdp/tinysql.git

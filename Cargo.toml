@@ -8,5 +8,5 @@ members = [
     "dsa",
     "projects/pandas",
     "projects/snake",
-    "projects/minisql"
+    "projects/tinysql"
 ]
