@@ -1,0 +1,34 @@
+name: Rust Challenges
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build CHALLENGES
+      run: cargo build --verbose -p challenges
+    - name: Run tests CHALLENGES
+      run: cargo test --verbose -p challenges
+    - name: Build LIB
+      run: cargo build --verbose -p _lib
+    - name: Run tests LIB
+      run: cargo test --verbose -p lib
+    - name: Build DESIGN PATTERNS
+      run: cargo build --verbose -p design_patterns
+    - name: Run tests DESIGN PATTERNS
+      run: cargo test --verbose -p design_patterns
+    - name: Build DSA
+      run: cargo build --verbose -p dsa
+    - name: Run tests DSA
+      run: cargo test --verbose -p dsa
