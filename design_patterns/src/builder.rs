@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 /**
  * BUILDER PATTERN
  *
@@ -64,7 +66,10 @@ impl Computer {
 
     fn boot(&self) {
         match self.memory {
-            Some(size) => println!("The computer boots with {:?} processor and {size}MB of memory", self.processor),
+            Some(size) => println!(
+                "The computer boots with {:?} processor and {size}MB of memory",
+                self.processor
+            ),
             None => println!("The Computer failed to boot!! CODE: NO_MEMORY_FOUND"),
         }
     }
