@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: 'true'
     - name: Build CHALLENGES
       run: cargo build --verbose -p challenges
     - name: Run tests CHALLENGES
