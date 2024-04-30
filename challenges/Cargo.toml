@@ -33,6 +33,9 @@ path = "easy/consecutive_groups.rs"
 name = "repeat"
 path = "easy/repeat.rs"
 
+[[bin]]
+name = 'two_sum'
+path = "easy/two_sum.rs"
 # ==========================[ INTERMEDIATE CHALLENGES]==========================
 
 [[bin]]
@@ -47,8 +50,5 @@ path = "medium/c2_linear_regression.rs"
 name = "c3_comprehension"
 path = "medium/c3_comprehension.rs"
 
-[[bin]]
-name = 'two_sum'
-path = "medium/c4_two_sum.rs"
 
 #===============================[ PRO CHALLENGES]===============================
