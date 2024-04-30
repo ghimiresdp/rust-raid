@@ -47,4 +47,8 @@ path = "inter/c2_linear_regression.rs"
 name = "c3_comprehension"
 path = "inter/c3_comprehension.rs"
 
+[[bin]]
+name = 'two_sum'
+path = "inter/c4_two_sum.rs"
+
 #===============================[ PRO CHALLENGES]===============================
