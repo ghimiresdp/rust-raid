@@ -11,44 +11,44 @@ _lib = { path = "../_lib" }
 #==============================[ BASIC CHALLENGES]==============================
 [[bin]]
 name = "fib"
-path = "basic/fib.rs"
+path = "easy/fib.rs"
 
 [[bin]]
 name = "practical_number"
-path = "basic/practical_number.rs"
+path = "easy/practical_number.rs"
 
 [[bin]]
 name = "gcd"
-path = "basic/gcd.rs"
+path = "easy/gcd.rs"
 
 [[bin]]
 name = "minimize_sum"
-path = "basic/minimize_sum.rs"
+path = "easy/minimize_sum.rs"
 
 [[bin]]
 name = "consecutive"
-path = "basic/consecutive_groups.rs"
+path = "easy/consecutive_groups.rs"
 
 [[bin]]
 name = "repeat"
-path = "basic/repeat.rs"
+path = "easy/repeat.rs"
 
 # ==========================[ INTERMEDIATE CHALLENGES]==========================
 
 [[bin]]
 name = "c1_matmul"
-path = "inter/c1_matmul.rs"
+path = "medium/c1_matmul.rs"
 
 [[bin]]
 name = "c2_linear_regression"
-path = "inter/c2_linear_regression.rs"
+path = "medium/c2_linear_regression.rs"
 
 [[bin]]
 name = "c3_comprehension"
-path = "inter/c3_comprehension.rs"
+path = "medium/c3_comprehension.rs"
 
 [[bin]]
 name = 'two_sum'
-path = "inter/c4_two_sum.rs"
+path = "medium/c4_two_sum.rs"
 
 #===============================[ PRO CHALLENGES]===============================
