@@ -6,6 +6,7 @@ members = [
     "challenges",
     "design_patterns",
     "dsa",
+    "macros",
     "projects/pandas",
     "projects/snake",
 ]

@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 _lib = { path = "../_lib" }
 
-#==============================[ BASIC CHALLENGES]==============================
+# ==============================[ EASY CHALLENGES]==============================
 [[bin]]
 name = "fib"
 path = "easy/fib.rs"
@@ -36,7 +36,7 @@ path = "easy/repeat.rs"
 [[bin]]
 name = 'two_sum'
 path = "easy/two_sum.rs"
-# ==========================[ INTERMEDIATE CHALLENGES]==========================
+# =============================[ MEDIUM CHALLENGES]=============================
 
 [[bin]]
 name = "c1_matmul"
@@ -49,6 +49,5 @@ path = "medium/c2_linear_regression.rs"
 [[bin]]
 name = "c3_comprehension"
 path = "medium/c3_comprehension.rs"
-
 
 #===============================[ PRO CHALLENGES]===============================

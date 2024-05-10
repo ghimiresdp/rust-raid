@@ -1,0 +1,19 @@
+[package]
+name = "macros"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+syn = { version = "2.0" }
+quote = "*"
+
+[lib]
+proc-macro = true
+
+[[bin]]
+name = "declarative"
+path = "src/declarative.rs"
+
+[[bin]]
+name = "procedural"
+path = "src/procedural.rs"
