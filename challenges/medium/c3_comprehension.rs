@@ -3,10 +3,9 @@
  *
  * Rustlang do not have default list comprehension feature, however we are
  * assigned a task to create our own syntax similar to list comprehension.
- * We can not create a comprehension that is 100% similar to python since
- * any expression requires semicolon as a delimiter before we could use another
- * token so we tried to generate a macro that could iterate and map values
- * that has behavior similar to list comprehension.
+ *
+ * NOTE: the example from `macros/declarative.rs` contains the most compatible
+ * version that complies with python's list comprehension.
  *
  * Structure:
  *
