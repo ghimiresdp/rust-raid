@@ -16,6 +16,14 @@
  *  * w0, w1, ...   => model parameters (intercepts, slops, etc.)
  *  * e             => error parameter
  *
+ *
+ *  *
+ * To run the code, run the following:
+ * =============================================================================
+ *
+ * cargo run --bin m2
+ *
+ * =============================================================================
  */
 
 pub mod losses {

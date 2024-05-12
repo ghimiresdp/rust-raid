@@ -13,6 +13,15 @@
  *  comprehension!{foreach <iterable>; apply <function>}
  * Pattern 2:
  *  comprehension!{foreach <iterable>; apply <function>; where <condition>}
+ *
+ *
+ * To run the code, run the following:
+ * =============================================================================
+ *
+ * cargo run --bin m3
+ * cargo test --bin m3
+ *
+ * =============================================================================
  **/
 macro_rules! comprehension {
     (foreach $iterable:expr; apply $function:expr) => {

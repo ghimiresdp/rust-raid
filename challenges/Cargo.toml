@@ -39,16 +39,16 @@ path = "easy/two_sum.rs"
 # =============================[ MEDIUM CHALLENGES]=============================
 
 [[bin]]
-name = "c1_matmul"
-path = "medium/c1_matmul.rs"
+name = "m1"
+path = "medium/m1_matmul.rs"
 
 [[bin]]
-name = "c2_linear_regression"
-path = "medium/c2_linear_regression.rs"
+name = "m2"
+path = "medium/m2_linear_regression.rs"
 
 [[bin]]
-name = "c3_comprehension"
-path = "medium/c3_comprehension.rs"
+name = "m3"
+path = "medium/m3_comprehension.rs"
 
 [[bin]]
 name = "m4"

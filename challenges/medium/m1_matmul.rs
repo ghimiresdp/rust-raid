@@ -21,6 +21,14 @@
  * In rustlang, matrix multiplication is fairly tricky since borrowing will
  * occur in each loop. We need to clone the variable if the borrow occurs before
  * looping through vectors.
+ *
+ * To run the code, run the following:
+ * =============================================================================
+ *
+ * cargo run --bin m1
+ *
+ * =============================================================================
+ *
  */
 
 fn mat_mul(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
@@ -34,7 +42,6 @@ fn mat_mul(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let mut new_matrix: Vec<Vec<i32>> = vec![vec![0; i]; j];
     for x in 0..i {
         for y in 0..j {
-
             // we first determine respective row and column to perform operation
             let row_x = a[x].clone();
             let col_y: Vec<i32> = b.iter().map(|v| v[y]).collect();
