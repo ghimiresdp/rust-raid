@@ -52,6 +52,10 @@ path = "medium/c3_comprehension.rs"
 
 [[bin]]
 name = "m4"
-path = "medium/c4_linked_list_add.rs"
+path = "medium/m4_linked_list_add.rs"
+
+[[bin]]
+name = "m5"
+path = "medium/m5_reverse_integer.rs"
 
 #===============================[ PRO CHALLENGES]===============================
