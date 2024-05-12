@@ -1,5 +1,14 @@
-/// Two Sum Problem [from leetcode]
-/// https://leetcode.com/problems/two-sum/
+/**
+ * Two Sum Problem [from leetcode]
+ * https://leetcode.com/problems/two-sum/
+ *
+ * To run this file, please run the command:
+ *
+ * ================================================
+ *         cargo run --bin two_sum
+ * ================================================
+ *
+ */
 use std::collections::HashMap;
 
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
