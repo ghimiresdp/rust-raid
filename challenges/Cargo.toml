@@ -58,4 +58,8 @@ path = "medium/m4_linked_list_add.rs"
 name = "m5"
 path = "medium/m5_reverse_integer.rs"
 
+[[bin]]
+name = "m6"
+path = "medium/m6_median.rs"
+
 #===============================[ PRO CHALLENGES]===============================
