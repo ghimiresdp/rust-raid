@@ -28,13 +28,19 @@ impl Solution {
 }
 
 fn main() {
+    let (v1, v2) = (vec![1, 3], vec![2]);
     println!(
-        "{}",
-        Solution::find_median_sorted_arrays(vec![1, 3], vec![2])
+        "the median value of the following vectors {:?}, {:?} is: {}",
+        v1.clone(),
+        v2.clone(),
+        Solution::find_median_sorted_arrays(v1, v2)
     );
+    let (v1, v2) = (vec![1, 2], vec![3, 4]);
     println!(
-        "{}",
-        Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4])
+        "the median value of the following vectors {:?}, {:?} is: {}",
+        v1.clone(),
+        v2.clone(),
+        Solution::find_median_sorted_arrays(v1, v2)
     );
 }
 

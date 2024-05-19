@@ -129,7 +129,7 @@ fn main() {
 
     let mut model = LinearRegressionModel::new();
 
-    model.fit(x, y, 0.001, 1000);
+    model.fit(x, y, 0.01, 1000);
 
     let out = model.predict(vec![1.0, 2.0].as_ref());
     println!("Actual: 5.0, Prediction: {out}");
