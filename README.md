@@ -15,11 +15,12 @@ _Note: Topics that do not contain hyperlinks are work in progress. If you want t
 
 #### 2.1. **Basic Data Structures**
 
-1. [Arrays]
-2. [Singly Linked Lists]
-3. [Doubly Linked Lists]
-4. [Stacks]
-5. [Queues]
+1. **Arrays**
+      - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
+2. **Singly Linked Lists**
+3. **Doubly Linked Lists**
+4. **Stacks**
+5. **Queues**
 
 #### 2.2. **Complex Data Structures**
 
