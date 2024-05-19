@@ -119,6 +119,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "algorithms"
+version = "0.1.0"
+
+[[package]]
 name = "android-activity"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -565,6 +569,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "complexity_analysis"
+version = "0.1.0"
+
+[[package]]
 name = "concurrent-queue"
 version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -664,6 +672,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "data-structures"
+version = "0.1.0"
+
+[[package]]
 name = "derivative"
 version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -722,6 +734,10 @@ version = "0.1.0"
 dependencies = [
  "_lib",
 ]
+
+[[package]]
+name = "dynamic_programming"
+version = "0.1.0"
 
 [[package]]
 name = "ecolor"
@@ -1788,6 +1804,10 @@ name = "ppv-lite86"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de"
+
+[[package]]
+name = "problem_solving"
+version = "0.1.0"
 
 [[package]]
 name = "proc-macro-crate"

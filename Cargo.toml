@@ -3,10 +3,15 @@ resolver = "2"
 
 members = [
     "_lib",
+    "algorithms",
     "challenges",
+    "complexity_analysis",
+    "data-structures",
     "design_patterns",
     "dsa",
+    "dynamic_programming",
     "macros",
+    "problem_solving",
     "projects/pandas",
     "projects/snake",
 ]
