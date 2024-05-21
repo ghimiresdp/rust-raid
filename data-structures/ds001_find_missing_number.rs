@@ -1,5 +1,10 @@
 /**
- * Find the missing number
+ * -----------------------------------------------------------------------------
+ * FIND THE MISSING NUMBER
+ *
+ * To execute, please run: cargo run --bin ds001
+ * To run tests, please run: cargo test --bin ds001
+ * -----------------------------------------------------------------------------
  *
  * Write a program (and a test case) that finds a missing number from an array
  * containing distinct numbers.
