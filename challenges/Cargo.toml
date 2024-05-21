@@ -9,9 +9,6 @@ edition = "2021"
 _lib = { path = "../_lib" }
 
 # ==============================[ EASY CHALLENGES]==============================
-[[bin]]
-name = "fib"
-path = "easy/fib.rs"
 
 [[bin]]
 name = "practical_number"
