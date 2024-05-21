@@ -42,7 +42,7 @@ fn find_missing_number(mut num: Vec<i32>) -> Option<i32> {
 /**
  * Approach 2: calculating the expected sum and returning the difference
  *
- * This approach is much more performant since this approach has the time
+ * This approach is more efficient since this approach has the time
  * complexity of exactly O(n).
  */
 fn find_missing_num(num: Vec<i32>) -> Option<i32> {

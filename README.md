@@ -24,6 +24,7 @@ This module contains common methods used by various packages.
 
 1. **Arrays**
       - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
+      - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
 2. **Singly Linked Lists**
 3. **Doubly Linked Lists**
 4. **Stacks**
