@@ -9,3 +9,7 @@ edition = "2021"
 [[bin]]
 name = "ds001"
 path = "./ds001_find_missing_number.rs"
+
+[[bin]]
+name="ds002"
+path="./ds002_longest_subarray.rs"
