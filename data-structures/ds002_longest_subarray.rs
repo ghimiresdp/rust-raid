@@ -69,10 +69,11 @@ mod tests {
 
     #[test]
     fn has_sub_array() {
-        assert_eq!(longest_subarray(vec![3, 1, -1, 5, -2], 3), 4);
-        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 0), 2);
-        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 5), 4);
-        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 4), 2);
+        assert_eq!(longest_subarray(vec![3, 1, -1, 5, -2], 3), 4); // [1,-1,5,2]
+        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 0), 2); // [1,-1]
+        assert_eq!(longest_subarray(vec![1, -1, 3, 5, -2], 3), 3); // [1,-1,3]
+        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 5), 4); // [1,-1,5,2]
+        assert_eq!(longest_subarray(vec![1, -1, 5, -2, 3], 4), 2); // [-1,5]
     }
 
     #[test]
