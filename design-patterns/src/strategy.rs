@@ -1,5 +1,10 @@
 /**
+ * -----------------------------------------------------------------------------
  * STRATEGY PATTERN
+ *
+ * To execute, please run: cargo run --bin strategy
+ * To run tests, please run: cargo test --bin strategy
+ * -----------------------------------------------------------------------------
  *
  * A strategy pattern is a behavioral pattern that allows us to create different
  * algorithms and encapsulate each one and make it interchangeable. It allows us

@@ -1,5 +1,10 @@
 /**
+ * -----------------------------------------------------------------------------
  * ADAPTER PATTERN
+ *
+ * To execute, please run: cargo run --bin adapter
+ * To run tests, please run: cargo test --bin adapter
+ * -----------------------------------------------------------------------------
  *
  * An adapter pattern is a structural design pattern which allows objects with
  * incompatible interfaces or traits to work together.

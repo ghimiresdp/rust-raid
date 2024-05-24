@@ -2,7 +2,13 @@ use _lib::input;
 use rand;
 use std::collections::HashMap;
 /**
+ * -----------------------------------------------------------------------------
  * OBSERVER PATTERN
+ *
+ * To execute, please run: cargo run --bin observer
+ * To run tests, please run: cargo test --bin observer
+ * -----------------------------------------------------------------------------
+ *
  *
  * An Observer Pattern defines a one to many dependency between objects so that
  * all dependent objects automatically get notified once the state changes in
@@ -84,7 +90,7 @@ fn main() {
     sensor.readings().subscribe(SensorType::Wind, wind_listener);
     loop {
         println!("R: reading, U: Unsubscribe, E: Exit");
-        match input("Enter options").as_str().trim() {
+        match input("Enter option: ").as_str().trim() {
             "R" | "r" => {
                 // display readings of subscribed sensors
                 sensor.get_new_reading(SensorType::Rain);

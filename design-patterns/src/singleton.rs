@@ -1,5 +1,10 @@
 /**
- * SINGLETON DESIGN PATTERN
+ * -----------------------------------------------------------------------------
+ * # SINGLETON PATTERN
+ *
+ * To execute, please run: cargo run --bin singleton
+ * To run tests, please run: cargo test --bin singleton
+ * -----------------------------------------------------------------------------
  *
  * Singleton design pattern ensures that a class has only one instance and
  * provides a global point of access to it.
@@ -31,7 +36,7 @@ impl Display {
         }
     }
 
-    fn set_dimension(w: u32, h: u32){
+    fn set_dimension(w: u32, h: u32) {
         let mut guard = DISPLAY.lock().unwrap();
         guard.height = h;
         guard.width = w;
@@ -44,7 +49,10 @@ impl Display {
         // differently. But you'll still be able to access singleton instance by
         // calling `get_instance()` method from any instance of struct Display.
         let guard = DISPLAY.lock().unwrap();
-        Self { width: guard.width, height: guard.height}
+        Self {
+            width: guard.width,
+            height: guard.height,
+        }
     }
 }
 
@@ -57,6 +65,9 @@ fn main() {
     Display::set_dimension(3840, 2160);
     println!("{:?}", Display::get_instance());
 
-    let d = Display {width: 20, height: 30};
+    let d = Display {
+        width: 20,
+        height: 30,
+    };
     println!("{:?}", d);
 }

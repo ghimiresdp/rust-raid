@@ -1,5 +1,11 @@
 /**
+ * -----------------------------------------------------------------------------
  * COMMAND PATTERN
+ *
+ * To execute, please run: cargo run --bin command
+ * To run tests, please run: cargo test --bin command
+ * -----------------------------------------------------------------------------
+ *
  *
  * Command pattern is a behavioral design pattern that turns a request into a
  * stand-alone object that contains all the information about the request.

@@ -1,5 +1,11 @@
 /**
- * FACTORY DESIGN PATTERN
+ * -----------------------------------------------------------------------------
+ * FACTORY PATTERN
+ *
+ * To execute, please run: cargo run --bin factory
+ * To run tests, please run: cargo test --bin factory
+ * -----------------------------------------------------------------------------
+ *
  *
  * Factory pattern provides an interface for creating an object.
  * The factory pattern will validate all the initialization parameter before it
@@ -95,6 +101,7 @@ fn main() {
         c: 12.0,
     };
     println!("t1 area: {}", t1.area());
+    println!("t1 perimeter: {}", t1.perimeter());
     // This gives NaN since result will be a complex number.
 
     // This should panic when uncommented
