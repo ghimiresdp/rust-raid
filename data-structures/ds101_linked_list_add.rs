@@ -1,9 +1,13 @@
 /**
- * Challenge 4: Add numbers from Linked list
+ * -----------------------------------------------------------------------------
+ * ADD TWO LINKED LISTS
  *
- * create a linked list of an integer to represent number in which first item
- * will be representing first place and the following will be tenth, hundredth,
- * etc.
+ * To execute, please run: cargo run --bin ds101
+ * To run tests, please run: cargo test --bin ds101
+ * -----------------------------------------------------------------------------
+ *
+ * Given linked list that contains i32 number as a digit of each place, perform
+ * addition of two linked lists an return a new linked list.
  *
  * Example A linked list [4, 2, 0, 1] will represent a number 1024
  *
@@ -14,12 +18,6 @@
  *  - Input linked list: [2,1,5], [2,1,5]
  *  - Output linked list: [4, 2, 0, 1]
  *
- *  To run, please enter:
- * =============================================================================
- *
- *  cargo run --bin m4
- *
- * =============================================================================
  */
 
 // Definition for singly-linked list.
@@ -103,7 +101,7 @@ mod tests {
     use crate::{add_two_numbers, ListNode};
 
     #[test]
-    fn test_c4() {
+    fn test_sum() {
         assert_eq!(
             add_two_numbers(
                 Some(Box::new(ListNode::from_str("9"))),

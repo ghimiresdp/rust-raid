@@ -6,10 +6,21 @@ edition = "2021"
 [dependencies]
 
 
+# ==================================[ Arrays ]==================================
 [[bin]]
 name = "ds001"
 path = "./ds001_find_missing_number.rs"
 
 [[bin]]
-name="ds002"
-path="./ds002_longest_subarray.rs"
+name = "ds002"
+path = "./ds002_longest_subarray.rs"
+
+# ===============================[ Linked Lists ]===============================
+
+[[bin]]
+name = "ds101"
+path = "./ds101_linked_list_add.rs"
+
+# ==================================[ Stacks ]==================================
+
+# ==================================[ Queues ]==================================
