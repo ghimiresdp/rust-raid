@@ -26,7 +26,7 @@ This module contains common methods used by various packages.
       - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
       - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
 2. **Singly Linked Lists**
-      - [Add two linked list](./data-structures/ds101_linked_list_add.rs)
+      - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
 3. **Doubly Linked Lists**
 4. **Stacks**
 5. **Queues**
@@ -81,16 +81,16 @@ This module contains common methods used by various packages.
 4. [Topological Sort]
 5. [A* Search Algorithm]
 
-### [3. Design Patterns](./design_patterns/)
+### [3. Design Patterns](./design-patterns/)
 
-1. [Singleton Pattern](design_patterns/src/singleton.rs) `cargo run --bin singleton`
-2. [Factory Pattern](design_patterns/src/factory.rs) `cargo run --bin factory`
-3. [Builder Pattern](design_patterns/src/builder.rs) `cargo run --bin builder`
-4. [Decorator Pattern](design_patterns/src/decorator.rs) `cargo run --bin decorator`
-5. [Observer Pattern](design_patterns/src/observer.rs) `cargo run --bin observer`
-6. [Strategy Pattern](design_patterns/src/strategy.rs) `cargo run --bin strategy`
-7. [Command Pattern](design_patterns/src/command.rs) `cargo run --bin command`
-8. [Adapter Pattern](design_patterns/src/adapter.rs) `cargo run --bin adapter`
+1. [Singleton Pattern](design-patterns/src/singleton.rs) `cargo run --bin singleton`
+2. [Factory Pattern](design-patterns/src/factory.rs) `cargo run --bin factory`
+3. [Builder Pattern](design-patterns/src/builder.rs) `cargo run --bin builder`
+4. [Decorator Pattern](design-patterns/src/decorator.rs) `cargo run --bin decorator`
+5. [Observer Pattern](design-patterns/src/observer.rs) `cargo run --bin observer`
+6. [Strategy Pattern](design-patterns/src/strategy.rs) `cargo run --bin strategy`
+7. [Command Pattern](design-patterns/src/command.rs) `cargo run --bin command`
+8. [Adapter Pattern](design-patterns/src/adapter.rs) `cargo run --bin adapter`
 
 ### [4. Design Techniques]
 
@@ -98,21 +98,21 @@ This module contains common methods used by various packages.
 2. [Divide and Conquer]
 3. [Branch and Bound]
 
-### [5. Complexity Analysis](./complexity_analysis/)
+### [5. Complexity Analysis](./complexity-analysis/)
 
 1. Time Complexity analysis
 2. Space Complexity analysis
 
-### [6. Dynamic Programming](./dynamic_programming/)
+### [6. Dynamic Programming](./dynamic-programming/)
 
-1. [Fibonacci Series](./dynamic_programming/src/dp001_fibonacci.rs)
+1. [Fibonacci Series](./dynamic-programming/src/dp001_fibonacci.rs)
     - run:  `cargo run --bin fib`
     - test:  `cargo test --bin fib`
 2. [Longest Commmon Subsequence]
 3. [Knapsack Problem]
 4. [Matrix Multiplication]
 
-### [7. Problem Solving](./problem_solving/)
+### [7. Problem Solving](./problem-solving/)
 
 ### [8. Projects](./projects/)
 
