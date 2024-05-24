@@ -14,13 +14,13 @@
  *   total number of groups to be created is 2.
  *
  */
-use _lib::input;    // core library for this repo
+use _lib::input; // core library for this repo
 
 fn find_groups(mut list: Vec<usize>) -> usize {
     let mut sets = 1;
     list.sort();
     for (index, item) in list.iter().enumerate() {
-        if index < list.len()-1 && list[index + 1] - item != 1 {
+        if index < list.len() - 1 && list[index + 1] - item != 1 {
             sets += 1;
         }
     }
@@ -48,7 +48,7 @@ mod test {
     }
 
     #[test]
-    fn correct_with_unordered(){
-        assert_eq!(find_groups(vec![1, 14,2,12,3,9,15,10,8, 13]), 3)
+    fn correct_with_unordered() {
+        assert_eq!(find_groups(vec![1, 14, 2, 12, 3, 9, 15, 10, 8, 13]), 3)
     }
 }

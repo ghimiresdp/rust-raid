@@ -12,47 +12,47 @@ _lib = { path = "../_lib" }
 
 [[bin]]
 name = "practical_number"
-path = "easy/practical_number.rs"
+path = "src/practical_number.rs"
 
 [[bin]]
 name = "gcd"
-path = "easy/gcd.rs"
+path = "src/gcd.rs"
 
 [[bin]]
 name = "minimize_sum"
-path = "easy/minimize_sum.rs"
+path = "src/minimize_sum.rs"
 
 [[bin]]
 name = "consecutive"
-path = "easy/consecutive_groups.rs"
+path = "src/consecutive_groups.rs"
 
 [[bin]]
 name = "repeat"
-path = "easy/repeat.rs"
+path = "src/repeat.rs"
 
 [[bin]]
 name = 'two_sum'
-path = "easy/two_sum.rs"
+path = "src/two_sum.rs"
 # =============================[ MEDIUM CHALLENGES]=============================
 
 [[bin]]
 name = "m1"
-path = "medium/m1_matmul.rs"
+path = "src/m1_matmul.rs"
 
 [[bin]]
 name = "m2"
-path = "medium/m2_linear_regression.rs"
+path = "src/m2_linear_regression.rs"
 
 [[bin]]
 name = "m3"
-path = "medium/m3_comprehension.rs"
+path = "src/m3_comprehension.rs"
 
 [[bin]]
 name = "m5"
-path = "medium/m5_reverse_integer.rs"
+path = "src/m5_reverse_integer.rs"
 
 [[bin]]
 name = "m6"
-path = "medium/m6_median.rs"
+path = "src/m6_median.rs"
 
 #===============================[ PRO CHALLENGES]===============================
