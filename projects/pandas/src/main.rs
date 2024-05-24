@@ -1,5 +1,4 @@
 mod pandas;
-use std::collections::HashMap;
 
 use pandas as pd;
 
