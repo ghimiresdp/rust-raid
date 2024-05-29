@@ -108,7 +108,9 @@ This module contains common methods used by various packages.
 1. [Fibonacci Series](./dynamic-programming/src/dp001_fibonacci.rs)
     - run:  `cargo run --bin fib`
     - test:  `cargo test --bin fib`
-2. [Longest Commmon Subsequence]
+2. [Longest Commmon Subsequence](./dynamic-programming/src/dp002_lcs.rs)
+    - run:  `cargo run --bin lcs`
+    - test:  `cargo test --bin lcs`
 3. [Knapsack Problem]
 4. [Matrix Multiplication]
 
