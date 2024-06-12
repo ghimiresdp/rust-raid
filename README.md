@@ -33,10 +33,10 @@ This module contains common methods used by various packages.
 
 #### 1.2. **Complex Data Structures**
 
-      1. [Binary Trees]
-      2. [Heaps]
-      3. [Hash tables]
-      4. [Graphs]
+1. [Binary Trees]
+2. [Heaps]
+3. [Hash tables]
+4. [Graphs]
 
 #### 1.3. **Advanced Data Structures**
 
@@ -48,14 +48,14 @@ This module contains common methods used by various packages.
 
 ### [2. Algorithms](./algorithms/)
 
-#### [2.1. Searching]
+#### [2.1. Searching](./dsa/src/searching/)
 
 1. [Linear Searching](dsa/src/searching/linear_search.rs) `cargo run --bin linear_search`
 2. [Binary Searching](dsa/src/searching/binary_search.rs) `cargo run --bin binary_search`
 3. [Depth First Search (DFS)]
 4. [Breadth First Search (BFS)]
 
-#### [2.2. Sorting]
+#### [2.2. Sorting](./dsa/src/sorting/)
 
 1. [bubble sort](dsa/src/sorting/bubble_sort.rs) `cargo run --bin bubble_sort`
 2. [selection sort](dsa/src/sorting/selection_sort.rs) `cargo run --bin selection_sort`
@@ -69,7 +69,9 @@ This module contains common methods used by various packages.
 #### [2.3 Greedy Algorithms]
 
 1. [Activity Selection]
-2. [Huffman Coding]
+2. [Huffman Coding](./dsa/src/greedy_algorithms/huffman_coding.rs)
+    - ```cargo run --bin huffman_coding```
+    - ```cargo test --bin huffman_coding```
 3. [Krushkal's algorithm]
 4. [Prim's Algorithm]
 
