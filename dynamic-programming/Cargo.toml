@@ -7,4 +7,8 @@ edition = "2021"
 
 [[bin]]
 name = "fib"
-path="./src/dp001_fibonacci.rs"
+path = "./src/dp001_fibonacci.rs"
+
+[[bin]]
+name = 'lcs'
+path = "./src/dp002_lcs.rs"
