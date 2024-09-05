@@ -8,7 +8,6 @@ members = [
     "complexity-analysis",
     "data-structures",
     "design-patterns",
-    "dsa",
     "dynamic-programming",
     "macros",
     "problem-solving",

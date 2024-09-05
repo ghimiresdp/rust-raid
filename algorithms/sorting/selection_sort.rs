@@ -19,15 +19,18 @@
  * Swap values until all values are sorted
 **/
 fn selection_sort(array: &mut [isize]) -> &mut [isize] {
-    for i in 0..array.len(){
+    for i in 0..array.len() {
         let mut smallest = i;
-        for j in  i..array.len(){
-            if array[smallest] > array[j]{
+        for j in i..array.len() {
+            if array[smallest] > array[j] {
                 smallest = j;
             }
         }
-        if smallest!=i{
-            print!("Swapping {} and {} from {:?} -> ", array[smallest], array[i], array);
+        if smallest != i {
+            print!(
+                "Swapping {} and {} from {:?} -> ",
+                array[smallest], array[i], array
+            );
             array.swap(i, smallest);
             println!("{:?}", array)
         }
@@ -49,6 +52,9 @@ mod tests {
 
     #[test]
     fn sort_success() {
-        assert_eq!(selection_sort([1, 2, 5, 4, 3, 6].as_mut()), [1, 2, 3, 4, 5, 6])
+        assert_eq!(
+            selection_sort([1, 2, 5, 4, 3, 6].as_mut()),
+            [1, 2, 3, 4, 5, 6]
+        )
     }
 }

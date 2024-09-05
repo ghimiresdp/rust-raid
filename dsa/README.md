@@ -18,7 +18,6 @@
 - Hash Tables
 - Graphs
 
-
 ### DSA02 Algorithms
 
 ### DSA02 Searching
