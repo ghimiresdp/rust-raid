@@ -35,5 +35,5 @@ path = "src/sorting/quick_sort.rs"
 
 # ===========================[ greedy algorithm ]===============================
 [[bin]]
-name = "huffman_coding"
+name = "huffman"
 path = "src/greedy_algorithms/huffman_coding.rs"

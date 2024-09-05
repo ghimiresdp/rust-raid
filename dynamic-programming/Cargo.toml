@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 
 [[bin]]
-name = "fib"
+name = "fibonacci"
 path = "./src/dp001_fibonacci.rs"
 
 [[bin]]

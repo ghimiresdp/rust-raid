@@ -10,7 +10,38 @@ topics(workspaces). Each workspace contains multiple binaries so that it will be
 easier to run specific problem by selecting binaries.
 
 You can run each binary to execute the respective solution using the name of the
-binary which you can see at `cargo.toml` or docstring for each solution.
+binary which you can see at `cargo.toml` or `docstring` for each solution.
+
+> **Note:** Binary names might not always be the name of the file. Sometimes, a
+> shorter version of the solution name is used to make easier to type. You can
+> see the name of binary in the respective `README.md` file or the `docstring`
+> of the respective solution.
+> some examples of shorter version of solution name are as follows:
+>
+> - The binary for `huffman_coding.rs` is just `huffman`.
+> - The binary for `dp001_fibonacci.rs` is just `fibonacci`.
+
+You can run the `cargo run --bin <binary_name>` to run binaries.
+
+```bash
+# Example: running binary for fibonacci series
+cargo run --bin fib
+
+# Example: running binary for hoffman encoding
+cargo run --bin hoffman
+```
+
+Each solution will be provided with different test cases. To run all test cases,
+you can run `cargo test` command, or to run specific test, you can run
+`cargo test --bin <binary_name>`
+
+```bash
+# Example: running binary for fibonacci series
+cargo test --bin fib
+
+# Example: running binary for hoffman encoding
+cargo test --bin hoffman
+```
 
 ## List of workspace members
 
