@@ -129,12 +129,6 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 7. [Command Pattern](design-patterns/src/command.rs) `cargo run --bin command`
 8. [Adapter Pattern](design-patterns/src/adapter.rs) `cargo run --bin adapter`
 
-### [4. Design Techniques]
-
-1. [Backtracking]
-2. [Divide and Conquer]
-3. [Branch and Bound]
-
 ### [5. Complexity Analysis](./complexity-analysis/)
 
 1. Time Complexity analysis
@@ -152,6 +146,10 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 4. [Matrix Multiplication]
 
 ### [7. Problem Solving](./problem-solving/)
+
+1. [Backtracking]
+2. [Divide and Conquer]
+3. [Branch and Bound]
 
 ### [8. Projects](./projects/)
 

@@ -4,3 +4,53 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+_lib = { path = "../_lib" }
+
+# ==============================[ BASIC CHALLENGES]==============================
+
+[[bin]]
+name = "practical_number"
+path = "basic/practical_number.rs"
+
+[[bin]]
+name = "gcd"
+path = "basic/gcd.rs"
+
+[[bin]]
+name = "minimize_sum"
+path = "basic/minimize_sum.rs"
+
+[[bin]]
+name = "consecutive"
+path = "basic/consecutive_groups.rs"
+
+[[bin]]
+name = "repeat"
+path = "basic/repeat.rs"
+
+[[bin]]
+name = 'two_sum'
+path = "basic/two_sum.rs"
+# =============================[ MEDIUM CHALLENGES]=============================
+
+[[bin]]
+name = "m1"
+path = "basic/m1_matmul.rs"
+
+[[bin]]
+name = "m2"
+path = "basic/m2_linear_regression.rs"
+
+[[bin]]
+name = "m3"
+path = "basic/m3_comprehension.rs"
+
+[[bin]]
+name = "m5"
+path = "basic/m5_reverse_integer.rs"
+
+[[bin]]
+name = "m6"
+path = "basic/m6_median.rs"
+
+#===============================[ PRO CHALLENGES]===============================
