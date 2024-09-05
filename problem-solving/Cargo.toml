@@ -52,6 +52,6 @@ path = "mid/minimize_sum.rs"
 
 [[bin]]
 name = 'two_sum'
-path = "basic/two_sum.rs"
+path = "mid/two_sum.rs"
 
 #===============================[ PRO CHALLENGES]===============================
