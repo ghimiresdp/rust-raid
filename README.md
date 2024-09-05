@@ -57,25 +57,25 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 
 ### [1. Data Structures](./data-structures/)
 
-#### 1.1. **Basic Data Structures**
+#### [1.1. **Basic Data Structures**](data-structures/)
 
 1. **Arrays**
-      - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
-      - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
+    - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
+    - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
 2. **Singly Linked Lists**
-      - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
+    - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
 3. **Doubly Linked Lists**
 4. **Stacks**
 5. **Queues**
 
-#### 1.2. **Complex Data Structures**
+#### [1.2. **Complex Data Structures**](data-structures/)
 
 1. [Binary Trees]
 2. [Heaps]
 3. [Hash tables]
 4. [Graphs]
 
-#### 1.3. **Advanced Data Structures**
+#### [1.3. **Advanced Data Structures**](data-structures/)
 
 1. Segment Trees
 2. Fenwick Trees (Binary Indexed trees)
@@ -85,34 +85,32 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 
 ### [2. Algorithms](./algorithms/)
 
-#### [2.1. Searching](./dsa/src/searching/)
+#### [2.1. Searching](algorithms/searching/)
 
-1. [Linear Searching](dsa/src/searching/linear_search.rs) `cargo run --bin linear_search`
-2. [Binary Searching](dsa/src/searching/binary_search.rs) `cargo run --bin binary_search`
+1. [Linear Searching](algorithms/searching/linear_search.rs) `cargo run --bin linear_search`
+2. [Binary Searching](algorithms/searching/binary_search.rs) `cargo run --bin binary_search`
 3. [Depth First Search (DFS)]
 4. [Breadth First Search (BFS)]
 
-#### [2.2. Sorting](./dsa/src/sorting/)
+#### [2.2. Sorting](algorithms/sorting/)
 
-1. [bubble sort](dsa/src/sorting/bubble_sort.rs) `cargo run --bin bubble_sort`
-2. [selection sort](dsa/src/sorting/selection_sort.rs) `cargo run --bin selection_sort`
-3. [insertion sort](dsa/src/sorting/insertion_sort.rs) `cargo run --bin insertion_sort`
-4. [quick sort](dsa/src/sorting/quick_sort.rs) `cargo run --bin quick_sort`
+1. [bubble sort](algorithms/sorting/bubble_sort.rs) `cargo run --bin bubble_sort`
+2. [selection sort](algorithms/sorting/selection_sort.rs) `cargo run --bin selection_sort`
+3. [insertion sort](algorithms/sorting/insertion_sort.rs) `cargo run --bin insertion_sort`
+4. [quick sort](algorithms/sorting/quick_sort.rs) `cargo run --bin quick_sort`
 5. [Merge sort]
 6. [heap Sort]
 7. [Counting Sort]
 8. [Radix Sort]
 
-#### [2.3 Greedy Algorithms]
+#### [2.3 Greedy and Graph Algorithms](algorithms/greedy/)
 
 1. [Activity Selection]
-2. [Huffman Coding](./dsa/src/greedy_algorithms/huffman_coding.rs)
-    - ```cargo run --bin huffman_coding```
-    - ```cargo test --bin huffman_coding```
+2. [Huffman Coding](algorithms/greedy/huffman_coding.rs) `cargo run --bin huffman`
 3. [Krushkal's algorithm]
 4. [Prim's Algorithm]
 
-#### [2.4. Graph Algorithms]
+#### [2.4. Graph Algorithms](algorithms/graph/)
 
 1. [Dijkstra's Algorithm]
 2. [Bellman-Ford Algorithm]

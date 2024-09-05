@@ -10,22 +10,33 @@ List Of Algorithms are as follows:
 
 ### searching
 
-- Binary Search
-- Breadth First Search (BFS)
-- Depth First Search (DFS)
-- Linear Search
+1. [Linear Searching](searching/linear_search.rs) `cargo run --bin linear_search`
+2. [Binary Searching](searching/binary_search.rs) `cargo run --bin binary_search`
+3. [Depth First Search (DFS)]
+4. [Breadth First Search (BFS)]
 
 ### sorting
 
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Quick Sort
-- Merge Sort
+1. [bubble sort](sorting/bubble_sort.rs) `cargo run --bin bubble_sort`
+2. [selection sort](sorting/selection_sort.rs) `cargo run --bin selection_sort`
+3. [insertion sort](sorting/insertion_sort.rs) `cargo run --bin insertion_sort`
+4. [quick sort](sorting/quick_sort.rs) `cargo run --bin quick_sort`
+5. [Merge sort]
+6. [heap Sort]
+7. [Counting Sort]
+8. [Radix Sort]
 
 ### Greedy Algorithms
 
-- Fractional Knapsack
-- Dijkstra's Algorithm
-- Kruskal's Algorithm
-- Egyptian Fraction
+1. [Activity Selection]
+2. [Huffman Coding](greedy/huffman_coding.rs) `cargo run --bin huffman`
+3. [Krushkal's algorithm]
+4. [Prim's Algorithm]
+
+### Graph Algorithms
+
+1. [Dijkstra's Algorithm]
+2. [Bellman-Ford Algorithm]
+3. [Floyd-Warshall Algorithm]
+4. [Topological Sort]
+5. [A* Search Algorithm]
