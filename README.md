@@ -1,7 +1,5 @@
 # Rust Raid
 
-_**Consume rust with challenges.**_
-
 [Rust Raid](https://github.com/ghimiresdp/rust-raid) is a repository for Rust
 learners and coding challenge seekers.
 
@@ -9,55 +7,19 @@ The repository contains solutions to diverse challenges categorized by different
 topics(workspaces). Each workspace contains multiple binaries so that it will be
 easier to run specific problem by selecting binaries.
 
-You can run each binary to execute the respective solution using the name of the
-binary which you can see at `cargo.toml` or `docstring` for each solution.
-
-> **Note:** Binary names might not always be the name of the file. Sometimes, a
-> shorter version of the solution name is used to make easier to type. You can
-> see the name of binary in the respective `README.md` file or the `docstring`
-> of the respective solution.
-> some examples of shorter version of solution name are as follows:
->
-> - The binary for `huffman_coding.rs` is just `huffman`.
-> - The binary for `dp001_fibonacci.rs` is just `fibonacci`.
-
-You can run the `cargo run --bin <binary_name>` to run binaries.
-
-```bash
-# Example: running binary for fibonacci series
-cargo run --bin fib
-
-# Example: running binary for hoffman encoding
-cargo run --bin hoffman
-```
-
-Each solution will be provided with different test cases. To run all test cases,
+You can run the `cargo run --bin <binary_name>` to run binaries.To run all test cases,
 you can run `cargo test` command, or to run specific test, you can run
 `cargo test --bin <binary_name>`
 
 ```bash
-# Example: running binary for fibonacci series
-cargo test --bin fib
-
 # Example: running binary for hoffman encoding
+cargo run --bin hoffman
 cargo test --bin hoffman
 ```
 
-## List of workspace members
+## [1. Data Structures](./data-structures/)
 
-> **Note**: Topics that do not contain hyperlinks are work in progress and will
-> be updated as soon as the solution gets completed.
->
-> You can also create a PR with solution/enhancement to each topics.
-
-To run/test any binary, you can use `cargo run` and `cargo test` commands
-
-- Example 1: `cargo run --bin fib`
-- Example 2: `cargo test --bin fib`
-
-### [1. Data Structures](./data-structures/)
-
-#### [1.1. **Basic Data Structures**](data-structures/)
+### [1.1. **Basic Data Structures**](data-structures/)
 
 1. **Arrays**
     - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
@@ -68,14 +30,14 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 4. **Stacks**
 5. **Queues**
 
-#### [1.2. **Complex Data Structures**](data-structures/)
+### [1.2. **Complex Data Structures**](data-structures/)
 
 1. [Binary Trees]
 2. [Heaps]
 3. [Hash tables]
 4. [Graphs]
 
-#### [1.3. **Advanced Data Structures**](data-structures/)
+### [1.3. **Advanced Data Structures**](data-structures/)
 
 1. Segment Trees
 2. Fenwick Trees (Binary Indexed trees)
@@ -83,16 +45,16 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 4. Trie
 5. Disjoint Set
 
-### [2. Algorithms](./algorithms/)
+## [2. Algorithms](./algorithms/)
 
-#### [2.1. Searching](algorithms/searching/)
+### [2.1. Searching](algorithms/searching/)
 
 1. [Linear Searching](algorithms/searching/linear_search.rs) `cargo run --bin linear_search`
 2. [Binary Searching](algorithms/searching/binary_search.rs) `cargo run --bin binary_search`
 3. [Depth First Search (DFS)]
 4. [Breadth First Search (BFS)]
 
-#### [2.2. Sorting](algorithms/sorting/)
+### [2.2. Sorting](algorithms/sorting/)
 
 1. [bubble sort](algorithms/sorting/bubble_sort.rs) `cargo run --bin bubble_sort`
 2. [selection sort](algorithms/sorting/selection_sort.rs) `cargo run --bin selection_sort`
@@ -103,14 +65,14 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 7. [Counting Sort]
 8. [Radix Sort]
 
-#### [2.3 Greedy and Graph Algorithms](algorithms/greedy/)
+### [2.3 Greedy and Graph Algorithms](algorithms/greedy/)
 
 1. [Activity Selection]
 2. [Huffman Coding](algorithms/greedy/huffman_coding.rs) `cargo run --bin huffman`
 3. [Krushkal's algorithm]
 4. [Prim's Algorithm]
 
-#### [2.4. Graph Algorithms](algorithms/graph/)
+### [2.4. Graph Algorithms](algorithms/graph/)
 
 1. [Dijkstra's Algorithm]
 2. [Bellman-Ford Algorithm]
@@ -118,7 +80,7 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 4. [Topological Sort]
 5. [A* Search Algorithm]
 
-### [3. Design Patterns](./design-patterns/)
+## [3. Design Patterns](./design-patterns/)
 
 1. [Singleton Pattern](design-patterns/src/singleton.rs) `cargo run --bin singleton`
 2. [Factory Pattern](design-patterns/src/factory.rs) `cargo run --bin factory`
@@ -129,37 +91,37 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 7. [Command Pattern](design-patterns/src/command.rs) `cargo run --bin command`
 8. [Adapter Pattern](design-patterns/src/adapter.rs) `cargo run --bin adapter`
 
-### [4. Problem Solving](problem-solving/)
+## [4. Problem Solving](problem-solving/)
 
-#### [4.1. Basic Problems](problem-solving/basic/)
+### [4.1. Basic Problems](problem-solving/basic/)
 
 1. [Practical Number](problem-solving/basic/practical_number.rs)  `cargo run --bin practical_number`
 2. [Greatest Common Divisor](problem-solving/basic/gcd.rs) `cargo run --bin gcd`
 3. [Median](problem-solving/basic/median.rs) `cargo run --bin median`
 4. [Reverse digits of the integer](problem-solving/basic/reverse_integer.rs) `cargo run --bin reverse_integer`
-5. [List Comprehension](problem-solving/basic/comprehension.rs)
-6. [Linear Regression Model](problem-solving/basic/linear_regression.rs)
-7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs)
+5. [List Comprehension](problem-solving/basic/comprehension.rs) `cargo run --bin comprehension`
+6. [Linear Regression Model](problem-solving/basic/linear_regression.rs) `cargo run --bin linear_regression`
+7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs) `cargo run --bin matrix_multiplication`
 
-#### [4.2. Mid Level Problems](problem-solving/mid/)
+### [4.2. Mid Level Problems](problem-solving/mid/)
 
 1. [List group by consecutive numbers](problem-solving/mid/consecutive_groups.rs) `cargo run --bin consecutive_groups`
 2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/mid/repeat.rs)`cargo run --bin repeat`
 3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/mid/two_sum.rs) `cargo run --bin two_sum`
 4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
 
-#### [4.3. Pro Level Problems](problem-solving/pro/)
+### [4.3. Pro Level Problems](problem-solving/pro/)
 
 1. [Backtracking]
 2. [Divide and Conquer]
 3. [Branch and Bound]
 
-### [5. Complexity Analysis](./complexity-analysis/)
+## [5. Complexity Analysis](./complexity-analysis/)
 
 1. Time Complexity analysis
 2. Space Complexity analysis
 
-### [6. Dynamic Programming](./dynamic-programming/)
+## [6. Dynamic Programming](./dynamic-programming/)
 
 1. [Fibonacci Series](./dynamic-programming/src/dp001_fibonacci.rs)
     - run:  `cargo run --bin fib`
@@ -170,8 +132,13 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 3. [Knapsack Problem]
 4. [Matrix Multiplication]
 
-### [8. Projects](./projects/)
+## [7. Projects](./projects/)
 
+> **Note**: Topics that do not contain hyperlinks are work in progress and will
+> be updated as soon as the solution gets completed.
+>
+> You can also create a PR with solution/enhancement to each topics.
+>
 ## Running binaries
 
 To run any binary, you can run the command `cargo run --bin <bin_name>`
@@ -181,6 +148,14 @@ Example:
 ```shell
 cargo run --bin practical_number
 ```
+
+> **Note:** Binary names might not always be the name of the file. Sometimes, a
+> shorter version of the solution name is used to make easier to type. You can
+> see the name of binary in the respective `README.md` file or the `docstring`
+> of the respective solution.
+> some examples of shorter version of solution name are as follows:
+>
+> - The binary for `huffman_coding.rs` is just `huffman`.
 
 ## Testing
 
