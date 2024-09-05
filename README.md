@@ -129,6 +129,31 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
 7. [Command Pattern](design-patterns/src/command.rs) `cargo run --bin command`
 8. [Adapter Pattern](design-patterns/src/adapter.rs) `cargo run --bin adapter`
 
+### [4. Problem Solving](problem-solving/)
+
+#### [4.1. Basic Problems](problem-solving/basic/)
+
+1. [Practical Number](problem-solving/basic/practical_number.rs)  `cargo run --bin practical_number`
+2. [Greatest Common Divisor](problem-solving/basic/gcd.rs) `cargo run --bin gcd`
+3. [Median](problem-solving/basic/median.rs) `cargo run --bin median`
+4. [Reverse digits of the integer](problem-solving/basic/reverse_integer.rs) `cargo run --bin reverse_integer`
+5. [List Comprehension](problem-solving/basic/comprehension.rs)
+6. [Linear Regression Model](problem-solving/basic/linear_regression.rs)
+7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs)
+
+#### [4.2. Mid Level Problems](problem-solving/mid/)
+
+1. [List group by consecutive numbers](problem-solving/mid/consecutive_groups.rs) `cargo run --bin consecutive_groups`
+2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/mid/repeat.rs)`cargo run --bin repeat`
+3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/mid/two_sum.rs) `cargo run --bin two_sum`
+4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
+
+#### [4.3. Pro Level Problems](problem-solving/pro/)
+
+1. [Backtracking]
+2. [Divide and Conquer]
+3. [Branch and Bound]
+
 ### [5. Complexity Analysis](./complexity-analysis/)
 
 1. Time Complexity analysis
@@ -144,12 +169,6 @@ To run/test any binary, you can use `cargo run` and `cargo test` commands
     - test:  `cargo test --bin lcs`
 3. [Knapsack Problem]
 4. [Matrix Multiplication]
-
-### [7. Problem Solving](./problem-solving/)
-
-1. [Backtracking]
-2. [Divide and Conquer]
-3. [Branch and Bound]
 
 ### [8. Projects](./projects/)
 

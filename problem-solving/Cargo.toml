@@ -17,40 +17,41 @@ name = "gcd"
 path = "basic/gcd.rs"
 
 [[bin]]
-name = "minimize_sum"
-path = "basic/minimize_sum.rs"
+name = "reverse_integer"
+path = "basic/reverse_integer.rs"
+
+[[bin]]
+name = "median"
+path = "basic/median.rs"
+
+[[bin]]
+name = "linear_regression"
+path = "basic/linear_regression.rs"
+
+[[bin]]
+name = "comprehension"
+path = "basic/comprehension.rs"
+
+[[bin]]
+name = "matrix_multiplication"
+path = "basic/matrix_multiplication.rs"
+
+# =============================[ MEDIUM CHALLENGES]=============================
 
 [[bin]]
 name = "consecutive"
-path = "basic/consecutive_groups.rs"
+path = "mid/consecutive_groups.rs"
 
 [[bin]]
 name = "repeat"
-path = "basic/repeat.rs"
+path = "mid/repeat.rs"
+
+[[bin]]
+name = "minimize_sum"
+path = "mid/minimize_sum.rs"
 
 [[bin]]
 name = 'two_sum'
 path = "basic/two_sum.rs"
-# =============================[ MEDIUM CHALLENGES]=============================
-
-[[bin]]
-name = "m1"
-path = "basic/m1_matmul.rs"
-
-[[bin]]
-name = "m2"
-path = "basic/m2_linear_regression.rs"
-
-[[bin]]
-name = "m3"
-path = "basic/m3_comprehension.rs"
-
-[[bin]]
-name = "m5"
-path = "basic/m5_reverse_integer.rs"
-
-[[bin]]
-name = "m6"
-path = "basic/m6_median.rs"
 
 #===============================[ PRO CHALLENGES]===============================
