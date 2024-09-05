@@ -1,22 +1,28 @@
-# rust-challenges
+# Rust Raid
 
-This is a repository for Rust learners as well as coding challenge seekers.
+_**Consume rust with challenges.**_
 
-The repository contains various workspace members with multiple binaries
-The binaries are specified in the respective `cargo.toml` file.
+[Rust Raid](https://github.com/ghimiresdp/rust-raid) is a repository for Rust
+learners and coding challenge seekers.
+
+The repository contains solutions to diverse challenges categorized by different
+topics(workspaces). Each workspace contains multiple binaries so that it will be
+easier to run specific problem by selecting binaries.
+
+You can run each binary to execute the respective solution using the name of the
+binary which you can see at `cargo.toml` or docstring for each solution.
 
 ## List of workspace members
 
-> _Note: Topics that do not contain hyperlinks are work in progress. If you want to contribute to any topic, you can create a PR._
+> **Note**: Topics that do not contain hyperlinks are work in progress and will
+> be updated as soon as the solution gets completed.
 >
-> To run/test any binary, you can use `cargo run` and `cargo test` commands
->
-> - Example 1: `cargo run --bin fib`
-> - Example 2: `cargo test --bin fib`
+> You can also create a PR with solution/enhancement to each topics.
 
-### [`_lib`](_lib/)
+To run/test any binary, you can use `cargo run` and `cargo test` commands
 
-This module contains common methods used by various packages.
+- Example 1: `cargo run --bin fib`
+- Example 2: `cargo test --bin fib`
 
 ### [1. Data Structures](./data-structures/)
 
