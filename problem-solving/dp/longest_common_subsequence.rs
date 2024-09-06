@@ -1,29 +1,22 @@
-/**
- * -----------------------------------------------------------------------------
- * Longest Common Subsequence problem
- *
- * To execute, please run: cargo run --bin adapter
- * To run tests, please run: cargo test --bin adapter
- * -----------------------------------------------------------------------------
- *
- * Given two strings, find the longest common subsequence (LCS).
- * A subsequence is a sequence that appears in the same relative order, but not
- * necessarily consecutive within another sequence.
- *
- * example:
- * - X = [AGGTAB]
- * - Y = [GXTXAYB]
- *
- * The LCS of X and Y is [GTAB] with length 4
- *
- */
-fn main() {
-    let a = "AGGTAB";
-    let b = "GXTXAYB";
-    println!("LCS is : {}", lcs(a, b));
-    println!("LCS is : {}", lcs(b, a));
-}
+//! ----------------------------------------------------------------------------
+//! ? To execute/test please run:
+//! ```
+//!  cargo run --bin lcs
+//!  cargo test --bin lcs
+//! ```
+//!  ---------------------------------------------------------------------------
 
+///  Longest Common Subsequence problem
+/// Given two strings, find the longest common subsequence (LCS).
+/// A subsequence is a sequence that appears in the same relative order, but not
+/// necessarily consecutive within another sequence.
+///
+/// example:
+/// - X = [AGGTAB]
+/// - Y = [GXTXAYB]
+///
+/// The LCS of X and Y is [GTAB] with length 4
+///
 /// Computes the length of the Longest Common Subsequence (LCS) between two
 /// strings.
 /// The LCS of two strings is the longest sequence of characters that appears
@@ -64,6 +57,20 @@ fn lcs(a: &str, b: &str) -> usize {
     }
     // Return the LCS length from the bottom right corner
     matrix[m][n]
+}
+
+fn main() {
+    let a = "AGGTAB";
+    let b = "GXTXAYB";
+    println!(
+        r"
+    Finding out the length of the longest common subsequence between
+    - AGGTAB
+    - GXTXAYB
+    "
+    );
+    println!("LCS is : {}", lcs(a, b));
+    println!("LCS is : {}", lcs(b, a));
 }
 
 #[cfg(test)]

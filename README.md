@@ -12,9 +12,9 @@ you can run `cargo test` command, or to run specific test, you can run
 `cargo test --bin <binary_name>`
 
 ```bash
-# Example: running binary for hoffman encoding
-cargo run --bin hoffman
-cargo test --bin hoffman
+# Example: running binary for huffman encoding
+cargo run --bin huffman
+cargo test --bin huffman
 ```
 
 ## [1. Data Structures](./data-structures/)
@@ -45,7 +45,7 @@ cargo test --bin hoffman
 4. Trie
 5. Disjoint Set
 
-## [2. Algorithms](./algorithms/)
+## [2. Algorithms](./algorithms/README.md)
 
 ### [2.1. Searching](algorithms/searching/)
 
@@ -80,7 +80,7 @@ cargo test --bin hoffman
 4. [Topological Sort]
 5. [A* Search Algorithm]
 
-## [3. Design Patterns](./design-patterns/)
+## [3. Design Patterns](./design-patterns/README.md)
 
 1. [Singleton Pattern](design-patterns/src/singleton.rs) `cargo run --bin singleton`
 2. [Factory Pattern](design-patterns/src/factory.rs) `cargo run --bin factory`
@@ -91,7 +91,7 @@ cargo test --bin hoffman
 7. [Command Pattern](design-patterns/src/command.rs) `cargo run --bin command`
 8. [Adapter Pattern](design-patterns/src/adapter.rs) `cargo run --bin adapter`
 
-## [4. Problem Solving](problem-solving/)
+## [4. Problem Solving](problem-solving/README.md)
 
 ### [4.1. Basic Problems](problem-solving/basic/)
 
@@ -103,12 +103,16 @@ cargo test --bin hoffman
 6. [Linear Regression Model](problem-solving/basic/linear_regression.rs) `cargo run --bin linear_regression`
 7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs) `cargo run --bin matrix_multiplication`
 
-### [4.2. Mid Level Problems](problem-solving/mid/)
+### [4.2. Dynamic PRogramming](problem-solving/dp/)
 
 1. [List group by consecutive numbers](problem-solving/mid/consecutive_groups.rs) `cargo run --bin consecutive_groups`
 2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/mid/repeat.rs)`cargo run --bin repeat`
 3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/mid/two_sum.rs) `cargo run --bin two_sum`
 4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
+5. [Fibonacci Series](./problem-solving/dp/fibonacci.rs) `cargo run --bin fibonacci`
+6. [Longest Commmon Subsequence](./problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
+7. [Coin Change Problem]
+8. [Palindrome Partition]
 
 ### [4.3. Pro Level Problems](problem-solving/pro/)
 
@@ -118,21 +122,11 @@ cargo test --bin hoffman
 
 ## [5. Complexity Analysis](./complexity-analysis/)
 
-1. Time Complexity analysis
-2. Space Complexity analysis
+### [5.1. Time Complexity analysis]
 
-## [6. Dynamic Programming](./dynamic-programming/)
+### [5.2. Space Complexity analysis]
 
-1. [Fibonacci Series](./dynamic-programming/src/dp001_fibonacci.rs)
-    - run:  `cargo run --bin fib`
-    - test:  `cargo test --bin fib`
-2. [Longest Commmon Subsequence](./dynamic-programming/src/dp002_lcs.rs)
-    - run:  `cargo run --bin lcs`
-    - test:  `cargo test --bin lcs`
-3. [Knapsack Problem]
-4. [Matrix Multiplication]
-
-## [7. Projects](./projects/)
+## [6. Projects](./projects/)
 
 > **Note**: Topics that do not contain hyperlinks are work in progress and will
 > be updated as soon as the solution gets completed.

@@ -7,7 +7,6 @@ members = [
     "complexity-analysis",
     "data-structures",
     "design-patterns",
-    "dynamic-programming",
     "macros",
     "problem-solving",
     "projects/pandas",

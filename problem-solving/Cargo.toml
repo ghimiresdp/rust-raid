@@ -36,22 +36,28 @@ path = "basic/comprehension.rs"
 name = "matrix_multiplication"
 path = "basic/matrix_multiplication.rs"
 
-# =============================[ MEDIUM CHALLENGES]=============================
+# ============================[ Dynamic Programmign]============================
 
 [[bin]]
 name = "consecutive"
-path = "mid/consecutive_groups.rs"
+path = "dp/consecutive_groups.rs"
 
 [[bin]]
 name = "repeat"
-path = "mid/repeat.rs"
+path = "dp/repeat.rs"
 
 [[bin]]
 name = "minimize_sum"
-path = "mid/minimize_sum.rs"
+path = "dp/minimize_sum.rs"
 
 [[bin]]
 name = 'two_sum'
-path = "mid/two_sum.rs"
+path = "dp/two_sum.rs"
 
-#===============================[ PRO CHALLENGES]===============================
+[[bin]]
+name = "fibonacci"
+path = "dp/fibonacci.rs"
+
+[[bin]]
+name = 'lcs'
+path = "dp/longest_common_subsequence.rs"

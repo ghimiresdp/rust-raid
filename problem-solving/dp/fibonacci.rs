@@ -1,3 +1,6 @@
+//! To run/test the solution please enter the commands below
+//! `cargo run --bin fibonacci`
+//! `cargo test --bin fibonacci`
 use std::io;
 
 fn fib(n: usize) -> usize {
@@ -32,6 +35,16 @@ fn fibonacci(mut n: usize) -> usize {
     return result;
 }
 
+/**
+ * The main function of the program. It prompts the user to enter a number,
+ * calculates the nth number in the Fibonacci series using both a recursive and
+ * iterative approach, and prints the results.
+ *
+ * This solution works until 93rd number in the fibonacci series since the
+ * solution uses `usize` which is 64 bit unsigned integer.
+ *
+ * None. The function prints the results to the console.
+ */
 fn main() {
     let mut input = String::new();
     println!("Enter the value of n: ");
@@ -43,11 +56,15 @@ fn main() {
         input,
         fibonacci(input)
     );
-    println!(
-        "The {}th number of the fibonacci series using recursion is: {}",
-        input,
-        fib(input)
-    );
+    if input < 40 {
+        println!(
+            "The {}th number of the fibonacci series using recursion is: {}",
+            input,
+            fib(input)
+        );
+    } else {
+        println!("The recursive calculation is skipped since it is inefficient at higher numbers")
+    }
 }
 
 #[cfg(test)]
@@ -61,5 +78,14 @@ mod tests {
     #[test]
     fn fib_with_recursion() {
         assert_eq!(fib(10), 55);
+    }
+
+    /// this panics since it is 197,402,742,198,682,231,67 and can not fit into
+    /// the `usize` hence it panics with the message:
+    /// "attempt to add with overflow"
+    #[test]
+    #[should_panic]
+    fn fib_with_recursion_above_usize() {
+        fibonacci(94);
     }
 }
