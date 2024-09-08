@@ -21,6 +21,10 @@ path = "./ds002_longest_subarray.rs"
 name = "ds101"
 path = "./ds101_linked_list_add.rs"
 
+[[bin]]
+name = "doubly_linked_list"
+path = "./doubly_linked_list.rs"
+
 # ==================================[ Stacks ]==================================
 
 # ==================================[ Queues ]==================================
