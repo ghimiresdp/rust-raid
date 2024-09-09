@@ -26,7 +26,7 @@ cargo test --bin huffman
     - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
 2. **Singly Linked Lists**
     - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
-3. **Doubly Linked Lists**
+3. [**Doubly Linked Lists**](./data-structures/doubly_linked_list.rs) `cargo run --bin doubly_linked_list`
 4. **Stacks**
 5. **Queues**
 
