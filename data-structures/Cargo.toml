@@ -32,3 +32,7 @@ name = "stack"
 path = "./stack.rs"
 
 # ==================================[ Queues ]==================================
+
+[[bin]]
+name = "queue"
+path = "./queue.rs"
