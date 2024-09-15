@@ -27,7 +27,7 @@ cargo test --bin huffman
 2. **Singly Linked Lists**
     - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
 3. [**Doubly Linked Lists**](./data-structures/doubly_linked_list.rs) `cargo run --bin doubly_linked_list`
-4. **Stacks**
+4. [**Stacks**](./data-structures/stack.rs) `cargo run --bin stack`
 5. **Queues**
 
 ### [1.2. **Complex Data Structures**](data-structures/)
