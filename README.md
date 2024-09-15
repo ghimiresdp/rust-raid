@@ -23,7 +23,7 @@ cargo test --bin huffman
 
 1. **Arrays**
     - [Find the missing number](./data-structures/ds001_find_missing_number.rs) `cargo run --bin ds001`
-    - [Find the length of the longest subarray with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
+    - [Find the length of the longest sub-array with sum K](./data-structures/ds002_longest_subarray.rs) `cargo run --bin ds002`
 2. **Singly Linked Lists**
     - [Add two linked list](./data-structures/ds101_linked_list_add.rs) `cargo run --bin ds101`
 3. [**Doubly Linked Lists**](./data-structures/doubly_linked_list.rs) `cargo run --bin doubly_linked_list`
@@ -103,14 +103,14 @@ cargo test --bin huffman
 6. [Linear Regression Model](problem-solving/basic/linear_regression.rs) `cargo run --bin linear_regression`
 7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs) `cargo run --bin matrix_multiplication`
 
-### [4.2. Dynamic PRogramming](problem-solving/dp/)
+### [4.2. Dynamic Programming](problem-solving/dp/)
 
 1. [List group by consecutive numbers](problem-solving/mid/consecutive_groups.rs) `cargo run --bin consecutive_groups`
 2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/mid/repeat.rs)`cargo run --bin repeat`
 3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/mid/two_sum.rs) `cargo run --bin two_sum`
 4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
 5. [Fibonacci Series](./problem-solving/dp/fibonacci.rs) `cargo run --bin fibonacci`
-6. [Longest Commmon Subsequence](./problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
+6. [Longest Common Subsequence](./problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
 7. [Coin Change Problem]
 8. [Palindrome Partition]
 
