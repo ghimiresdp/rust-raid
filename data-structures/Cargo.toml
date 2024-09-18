@@ -16,7 +16,6 @@ name = "ds002"
 path = "./ds002_longest_subarray.rs"
 
 # ===============================[ Linked Lists ]===============================
-
 [[bin]]
 name = "ds101"
 path = "./ds101_linked_list_add.rs"
@@ -24,15 +23,15 @@ path = "./ds101_linked_list_add.rs"
 [[bin]]
 name = "doubly_linked_list"
 path = "./doubly_linked_list.rs"
-
 # ==================================[ Stacks ]==================================
-
 [[bin]]
 name = "stack"
 path = "./stack.rs"
-
 # ==================================[ Queues ]==================================
-
 [[bin]]
 name = "queue"
 path = "./queue.rs"
+# ===============================[ Binary Tree ]================================
+[[bin]]
+name = "binary_tree"
+path = "./binary_tree.rs"
