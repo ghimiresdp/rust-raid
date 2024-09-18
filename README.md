@@ -32,7 +32,7 @@ cargo test --bin huffman
 
 ### [1.2. **Complex Data Structures**](data-structures/)
 
-1. [Binary Trees]
+1. [Binary Trees](./data-structures/binary_tree.rs) `cargo run --bin binary_tree`
 2. [Heaps]
 3. [Hash tables]
 4. [Graphs]
