@@ -9,29 +9,29 @@ edition = "2021"
 # ==================================[ Arrays ]==================================
 [[bin]]
 name = "ds001"
-path = "./ds001_find_missing_number.rs"
+path = "src/ds001_find_missing_number.rs"
 
 [[bin]]
 name = "ds002"
-path = "./ds002_longest_subarray.rs"
+path = "src/ds002_longest_subarray.rs"
 
 # ===============================[ Linked Lists ]===============================
 [[bin]]
 name = "ds101"
-path = "./ds101_linked_list_add.rs"
+path = "src/ds101_linked_list_add.rs"
 
 [[bin]]
 name = "doubly_linked_list"
-path = "./doubly_linked_list.rs"
+path = "src/doubly_linked_list.rs"
 # ==================================[ Stacks ]==================================
 [[bin]]
 name = "stack"
-path = "./stack.rs"
+path = "src/stack.rs"
 # ==================================[ Queues ]==================================
 [[bin]]
 name = "queue"
-path = "./queue.rs"
+path = "src/queue.rs"
 # ===============================[ Binary Tree ]================================
 [[bin]]
 name = "binary_tree"
-path = "./binary_tree.rs"
+path = "src/binary_tree.rs"
