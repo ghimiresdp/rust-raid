@@ -47,72 +47,78 @@ impl Color {
         match color {
             Color::RGB(r, g, b) => Color::RGB(r, g, b),
             Color::HSL(h, s, l) => {
+                let s = s as f32 / 100.0;
+                let l = l as f32 / 100.0;
                 // we need tmp1 and tmp2 for calculating rgb values
-                let tmp1 = (if l >= 50 { l + s - l * s } else { l * (1 + s) }) as f32;
-                let tmp2 = (2f32 * l as f32 - tmp1) as f32;
+                let tmp1 = (if l >= 0.5 {
+                    l + s - l * s
+                } else {
+                    l * (1.0 + s)
+                }) as f32;
+                let tmp2 = (2.0 * l as f32 - tmp1) as f32;
 
-                let hue = h as f32 / 360f32;
+                let hue = h as f32 / 360.0;
 
                 let tmp_r = hue + 0.333;
                 let tmp_g = hue;
                 let tmp_b = hue - 0.333;
 
-                let tmp_r = if tmp_r > 1f32 {
-                    tmp_r - 1f32
-                } else if tmp_r < 0f32 {
-                    tmp_r + 1f32
+                let tmp_r = if tmp_r > 1.0 {
+                    tmp_r - 1.0
+                } else if tmp_r < 0.0 {
+                    tmp_r + 1.0
                 } else {
                     tmp_r
                 };
 
-                let tmp_g = if tmp_g > 1f32 {
-                    tmp_g - 1f32
-                } else if tmp_g < 0f32 {
-                    tmp_g + 1f32
+                let tmp_g = if tmp_g > 1.0 {
+                    tmp_g - 1.0
+                } else if tmp_g < 0.0 {
+                    tmp_g + 1.0
                 } else {
                     tmp_g
                 };
 
-                let tmp_b = if tmp_b > 1f32 {
-                    tmp_b - 1f32
-                } else if tmp_b < 0f32 {
-                    tmp_b + 1f32
+                let tmp_b = if tmp_b > 1.0 {
+                    tmp_b - 1.0
+                } else if tmp_b < 0.0 {
+                    tmp_b + 1.0
                 } else {
                     tmp_b
                 };
 
                 // calculation for r
-                let r = ((if 6f32 * tmp_r < 1f32 {
-                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_r
-                } else if tmp_r * 2f32 < 1f32 {
+                let r = ((if 6.0 * tmp_r < 1.0 {
+                    tmp2 + (tmp1 - tmp2) * 6.0 * tmp_r
+                } else if tmp_r * 2.0 < 1.0 {
                     tmp1
-                } else if 3f32 * tmp_r < 2f32 {
-                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_r) * 6f32
+                } else if 3.0 * tmp_r < 2.0 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_r) * 6.0
                 } else {
                     tmp2
-                }) * 255f32) as u8;
+                }) * 255.0) as u8;
 
                 // calculation for g
-                let g = ((if 6f32 * tmp_g < 1f32 {
-                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_g
-                } else if tmp_g * 2f32 < 1f32 {
+                let g = ((if 6.0 * tmp_g < 1.0 {
+                    tmp2 + (tmp1 - tmp2) * 6.0 * tmp_g
+                } else if tmp_g * 2.0 < 1.0 {
                     tmp1
-                } else if 3f32 * tmp_g < 2f32 {
-                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_g) * 6f32
+                } else if 3.0 * tmp_g < 2.0 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_g) * 6.0
                 } else {
                     tmp2
-                }) * 255f32) as u8;
+                }) * 255.0) as u8;
 
                 // calculation for b
-                let b = ((if 6f32 * tmp_b < 1f32 {
-                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_b
-                } else if tmp_b * 2f32 < 1f32 {
+                let b = ((if 6.0 * tmp_b < 1.0 {
+                    tmp2 + (tmp1 - tmp2) * 6.0 * tmp_b
+                } else if tmp_b * 2.0 < 1.0 {
                     tmp1
-                } else if 3f32 * tmp_b < 2f32 {
-                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_b) * 6f32
+                } else if 3.0 * tmp_b < 2.0 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_b) * 6.0
                 } else {
                     tmp2
-                }) * 255f32) as u8;
+                }) * 255.0) as u8;
 
                 Color::RGB(r, g, b)
             }
@@ -181,8 +187,12 @@ mod tests {
 
     #[test]
     fn hsl_to_other() {
-        let hex = Color::HSL(0, 0, 100);
-        assert_eq!(hex.to_rgb(), Color::RGB(255, 255, 255));
-        // assert_eq!(hex.to_hsl(), Color::HSL(0, 0, 100));
+        let hsl = Color::HSL(0, 0, 100);
+        assert_eq!(hsl.to_rgb(), Color::RGB(255, 255, 255));
+        assert_eq!(hsl.to_hex(), Color::HEX("#FFFFFF".to_owned()));
+
+        let hsl = Color::HSL(204, 100, 33);
+        assert_eq!(hsl.to_rgb(), Color::RGB(255, 255, 255));
+        assert_eq!(hsl.to_hex(), Color::HEX("#FFFFFF".to_owned()));
     }
 }
