@@ -46,7 +46,58 @@ impl Color {
 
         match color {
             Color::RGB(r, g, b) => Color::RGB(r, g, b),
-            Color::HSL(h, s, l) => todo!(),
+            Color::HSL(h, s, l) => {
+                // we need tmp1 and tmp2 for calculating rgb values
+                let tmp1 = (if l >= 50 { l + s - l * s } else { l * (1 + s) }) as f32;
+                let tmp2 = (2f32 * l as f32 - tmp1) as f32;
+
+                let hue = h as f32 / 360f32;
+
+                let tmp_r = hue + 0.333;
+                let tmp_g = hue;
+                let tmp_b = hue - 0.333;
+
+                let tmp_r = if tmp_r > 1f32 {
+                    tmp_r - 1f32
+                } else if tmp_r < 0f32 {
+                    tmp_r + 1f32
+                } else {
+                    tmp_r
+                };
+
+                let tmp_g = if tmp_g > 1f32 {
+                    tmp_g - 1f32
+                } else if tmp_g < 0f32 {
+                    tmp_g + 1f32
+                } else {
+                    tmp_g
+                };
+
+                let tmp_b = if tmp_b > 1f32 {
+                    tmp_b - 1f32
+                } else if tmp_b < 0f32 {
+                    tmp_b + 1f32
+                } else {
+                    tmp_b
+                };
+
+                // calculation for r
+                let r = ((if 6f32 * tmp_r < 1f32 {
+                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_r
+                } else if tmp_r * 2f32 < 1f32 {
+                    tmp1
+                } else if 3f32 * tmp_r < 2f32 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_r) * 6f32
+                } else {
+                    tmp2
+                }) * 255f32) as u8;
+
+                // calculation for g
+
+                // calculation for b
+
+                Color::RGB(r, (tmp_g * 255f32) as u8, (tmp_b * 255f32) as u8)
+            }
             Color::HEX(hex) => {
                 let (_, rgb) = hex.split_at(1);
                 println!("{:?}", rgb);
@@ -108,5 +159,12 @@ mod tests {
         let hex = Color::HEX("#FFFFFF".to_owned());
         assert_eq!(hex.to_rgb(), Color::RGB(255, 255, 255));
         assert_eq!(hex.to_hsl(), Color::HSL(0, 0, 100));
+    }
+
+    #[test]
+    fn hsl_to_other() {
+        let hex = Color::HSL(0, 0, 100);
+        assert_eq!(hex.to_rgb(), Color::RGB(255, 255, 255));
+        // assert_eq!(hex.to_hsl(), Color::HSL(0, 0, 100));
     }
 }
