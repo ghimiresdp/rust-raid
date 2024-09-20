@@ -93,10 +93,28 @@ impl Color {
                 }) * 255f32) as u8;
 
                 // calculation for g
+                let g = ((if 6f32 * tmp_g < 1f32 {
+                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_g
+                } else if tmp_g * 2f32 < 1f32 {
+                    tmp1
+                } else if 3f32 * tmp_g < 2f32 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_g) * 6f32
+                } else {
+                    tmp2
+                }) * 255f32) as u8;
 
                 // calculation for b
+                let b = ((if 6f32 * tmp_b < 1f32 {
+                    tmp2 + (tmp1 - tmp2) * 6f32 * tmp_b
+                } else if tmp_b * 2f32 < 1f32 {
+                    tmp1
+                } else if 3f32 * tmp_b < 2f32 {
+                    tmp2 + (tmp1 - tmp2) * (0.666 - tmp_b) * 6f32
+                } else {
+                    tmp2
+                }) * 255f32) as u8;
 
-                Color::RGB(r, (tmp_g * 255f32) as u8, (tmp_b * 255f32) as u8)
+                Color::RGB(r, g, b)
             }
             Color::HEX(hex) => {
                 let (_, rgb) = hex.split_at(1);
