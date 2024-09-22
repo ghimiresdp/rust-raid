@@ -12,28 +12,33 @@ impl Color {
         let color = self.clone();
         match color {
             Color::RGB(r, g, b) => {
-                let _min = min(min(r, g), b);
-                let _max = max(max(r, g), b);
+                let _min = min(min(r, g), b) as f32;
+                let _max = max(max(r, g), b) as f32;
 
-                let l = ((_min as f32 + _max as f32) / (2f32 * 2.55)).round() as u8;
+                // convert r,g,b to f32 since subtraction and division will result in a floating point value
+                let r = r as f32;
+                let g = g as f32;
+                let b = b as f32;
+
+                let l = ((_min + _max) / (2.0 * 2.55)).round() as u8;
                 let s = if _min == _max {
                     0
                 } else {
                     if l <= 50 {
-                        (((_max - _min) as f32 / (_max + _min) as f32) * 100f32).round() as u8
+                        (((_max - _min) / (_max + _min)) * 100.0).round() as u8
                     } else {
-                        (((_max - _min) as f32 / (2 - _max - _min) as f32) * 100f32).round() as u8
+                        (((_max - _min) / (2.0 - _max - _min)) * 100.0).round() as u8
                     }
                 };
                 let h = if r >= g && r >= b {
-                    (g - b) as f32 / (_max - _min) as f32
+                    (g - b) / (_max - _min)
                 } else if g >= b && g >= r {
-                    2f32 + (b - r) as f32 / (_max - _min) as f32
+                    2.0 + (b - r) / (_max - _min)
                 } else {
-                    4f32 + (r - g) as f32 / (_max - _min) as f32
+                    4.0 + (r - g) / (_max - _min)
                 };
 
-                let h = (h * 60f32) as u16;
+                let h = (h * 60.0) as u16;
 
                 Color::HSL(h, s, l)
             }
@@ -47,8 +52,17 @@ impl Color {
         match color {
             Color::RGB(r, g, b) => Color::RGB(r, g, b),
             Color::HSL(h, s, l) => {
+                if s == 0 {
+                    // if saturation is 0, then the color is grayscale and the
+                    // hue is unnecessary
+                    let r = (l as f32 * 255.0 / 100.0) as u8;
+                    // for grayscale colors, all r,g, and b values are same
+                    return Color::RGB(r, r, r);
+                }
+                let hue = h as f32 / 360.0;
                 let s = s as f32 / 100.0;
                 let l = l as f32 / 100.0;
+
                 // we need tmp1 and tmp2 for calculating rgb values
                 let tmp1 = (if l >= 0.5 {
                     l + s - l * s
@@ -56,8 +70,6 @@ impl Color {
                     l * (1.0 + s)
                 }) as f32;
                 let tmp2 = (2.0 * l as f32 - tmp1) as f32;
-
-                let hue = h as f32 / 360.0;
 
                 let tmp_r = hue + 0.333;
                 let tmp_g = hue;
@@ -176,6 +188,7 @@ mod tests {
 
         let rgb = Color::RGB(00, 102, 170);
         assert_eq!(rgb.to_hex(), Color::HEX("#0066AA".to_owned()));
+        assert_eq!(Color::RGB(00, 102, 170).to_hsl(), Color::HSL(204, 100, 33));
     }
 
     #[test]
@@ -191,8 +204,11 @@ mod tests {
         assert_eq!(hsl.to_rgb(), Color::RGB(255, 255, 255));
         assert_eq!(hsl.to_hex(), Color::HEX("#FFFFFF".to_owned()));
 
+        // if we convert the RGB to HSL and then back to RGB, then slightly different
+        // result is found due to rounding and conversion of f32 to u8 value
+        // so color different conversion softwares might return slightly different values
         let hsl = Color::HSL(204, 100, 33);
-        assert_eq!(hsl.to_rgb(), Color::RGB(255, 255, 255));
-        assert_eq!(hsl.to_hex(), Color::HEX("#FFFFFF".to_owned()));
+        assert_eq!(hsl.to_rgb(), Color::RGB(0, 100, 168));
+        assert_eq!(hsl.to_hex(), Color::HEX("#0064A8".to_owned()));
     }
 }
