@@ -36,6 +36,10 @@ path = "basic/comprehension.rs"
 name = "matrix_multiplication"
 path = "basic/matrix_multiplication.rs"
 
+[[bin]]
+name = "color_converter"
+path = "basic/color_converter.rs"
+
 # ============================[ Dynamic Programmign]============================
 
 [[bin]]

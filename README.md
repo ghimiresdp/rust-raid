@@ -91,6 +91,7 @@ cargo test --bin huffman
 5. [List Comprehension](problem-solving/basic/comprehension.rs) `cargo run --bin comprehension`
 6. [Linear Regression Model](problem-solving/basic/linear_regression.rs) `cargo run --bin linear_regression`
 7. [Matrix Multiplication Model](problem-solving/basic/matrix_multiplication.rs) `cargo run --bin matrix_multiplication`
+8. [Color Converter](problem-solving/basic/color_converter.rs) `cargo run --bin color_converter`
 
 ### [4.2. Dynamic Programming](problem-solving/dp/)
 
