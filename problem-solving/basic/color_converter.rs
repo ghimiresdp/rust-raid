@@ -1,5 +1,13 @@
+/// To run/test the binary, pease use the following commands:
+/// * cargo run --bin color_converter
+/// * cargo test --bin color_converter
 use std::cmp::{max, min};
 
+/// The enum `Color` can store one of the following values:
+/// * RGB
+/// * HSL
+/// * HEX
+/// Once Initialized, we can convert one type to another.
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum Color {
     RGB(u8, u8, u8),
@@ -10,8 +18,11 @@ enum Color {
 impl Color {
     fn to_hsl(&self) -> Self {
         let color = self.clone();
+
         match color {
             Color::RGB(r, g, b) => {
+                // we first need to find minimum and maximum values which will
+                // later be used to calculate other values
                 let _min = min(min(r, g), b) as f32;
                 let _max = max(max(r, g), b) as f32;
 
@@ -20,7 +31,17 @@ impl Color {
                 let g = g as f32;
                 let b = b as f32;
 
+                // find lightness
+                // rgb ranges from 0 to 255 which needs to be normalized to
+                // 0-100 in our case.
+                // some converters also might use saturation and lightness in
+                // range 0-1
                 let l = ((_min + _max) / (2.0 * 2.55)).round() as u8;
+
+                // find saturation
+                // if all colors are same, then it will be the shade of gray.
+                // example: rgb(40,40,40) is a shade of gray. if it is a shade
+                // of gray, the saturation will always
                 let s = if _min == _max {
                     0
                 } else {
@@ -30,6 +51,8 @@ impl Color {
                         (((_max - _min) / (2.0 - _max - _min)) * 100.0).round() as u8
                     }
                 };
+
+                // find hue
                 let h = if r >= g && r >= b {
                     (g - b) / (_max - _min)
                 } else if g >= b && g >= r {
@@ -52,52 +75,49 @@ impl Color {
         match color {
             Color::RGB(r, g, b) => Color::RGB(r, g, b),
             Color::HSL(h, s, l) => {
+                // if saturation is 0, then the color is grayscale and the
+                // hue is unnecessary
                 if s == 0 {
-                    // if saturation is 0, then the color is grayscale and the
-                    // hue is unnecessary
                     let r = (l as f32 * 255.0 / 100.0) as u8;
                     // for grayscale colors, all r,g, and b values are same
                     return Color::RGB(r, r, r);
                 }
+
+                // for ease, we normalize h,s, and l to range 0 to 1
                 let hue = h as f32 / 360.0;
                 let s = s as f32 / 100.0;
                 let l = l as f32 / 100.0;
 
-                // we need tmp1 and tmp2 for calculating rgb values
+                // to convert HSL to RGB, we need 2 arbitrary values, on which
+                // we perform calculations
+                // * if l >=0.5, tmp1 = (l + s) - (l * s)
+                // * if l < 0.5 tmp1 = l * (1 + s)
                 let tmp1 = (if l >= 0.5 {
                     l + s - l * s
                 } else {
                     l * (1.0 + s)
                 }) as f32;
-                let tmp2 = (2.0 * l as f32 - tmp1) as f32;
 
-                let tmp_r = hue + 0.333;
-                let tmp_g = hue;
-                let tmp_b = hue - 0.333;
+                let tmp2 = 2.0 * l - tmp1;
 
-                let tmp_r = if tmp_r > 1.0 {
-                    tmp_r - 1.0
-                } else if tmp_r < 0.0 {
-                    tmp_r + 1.0
-                } else {
-                    tmp_r
+                // we first find temporary values of red, green, and blue since
+                // they might not be in scale of 0 to 1;
+                // after that, we need to add or subtract values accordingly to
+                // get them in the range of 0 to 1 using normalize method.;
+
+                let normalize = |v: f32| {
+                    if v > 1.0 {
+                        v - 1.0
+                    } else if v < 0.0 {
+                        v + 1.0
+                    } else {
+                        v
+                    }
                 };
 
-                let tmp_g = if tmp_g > 1.0 {
-                    tmp_g - 1.0
-                } else if tmp_g < 0.0 {
-                    tmp_g + 1.0
-                } else {
-                    tmp_g
-                };
-
-                let tmp_b = if tmp_b > 1.0 {
-                    tmp_b - 1.0
-                } else if tmp_b < 0.0 {
-                    tmp_b + 1.0
-                } else {
-                    tmp_b
-                };
+                let tmp_r = normalize(hue + 0.333);
+                let tmp_g = normalize(hue);
+                let tmp_b = normalize(hue - 0.333);
 
                 // calculation for r
                 let r = ((if 6.0 * tmp_r < 1.0 {
