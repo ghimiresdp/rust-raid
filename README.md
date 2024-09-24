@@ -101,7 +101,7 @@ cargo test --bin huffman
 4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
 5. [Fibonacci Series](./problem-solving/dp/fibonacci.rs) `cargo run --bin fibonacci`
 6. [Longest Common Subsequence](./problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
-7. [Coin Change Problem]
+7. [Coin Change Problem](./problem-solving/dp/coin_change.rs) `cargo run --bin coin_change`
 8. [Palindrome Partition]
 
 ### [4.3. Pro Level Problems](problem-solving/pro/)
