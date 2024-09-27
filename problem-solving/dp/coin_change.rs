@@ -18,12 +18,28 @@ pub fn coin_change(coins: &mut Vec<usize>, sum: usize) -> i64 {
     // initialize an array of maximum number to store the minimum number of
     // coins required to change the given amount
     let mut table = vec![usize::MAX; sum + 1];
+
+    // the first item of the table is always 0 since 0 can be changed with 0 number of coins.
     table[0] = 0;
+
+    // iterate from 1 up to the total sum
     for num in 1..sum + 1 {
+        // iterate on each coin from the list of coins
         for coin in 1..coins.len() {
+            // discard the coin if the number (intermediate sum) is smaller than the coin itself
             if coins[coin] <= num {
-                // todo
+                // find the number of coins required to change that specific amount.
+                // for this, we can check  previous calculation and add the number of coins by 1
+                // if it can be changed.
+                // example: if we were about to change $50, and we already know that
+                // we have 5 changes for $45 and we have $5 coin for change, we do not need to
+                // find it from the start.
                 let sub_result = table[num - coins[coin]];
+
+                // check if the sub result is smallest when iterated over all the available coins.
+                // example: if sub_result when using coin 8 is smaller than using the coin 5,
+                // we should choose the sub-result with coin 8 since it will give us smallest
+                // number of coins to change the specified amount.
                 if sub_result != usize::MAX && sub_result + 1 < table[num] {
                     table[num] = sub_result + 1;
                 }
@@ -34,33 +50,6 @@ pub fn coin_change(coins: &mut Vec<usize>, sum: usize) -> i64 {
         return -1;
     }
     return table[sum] as i64;
-
-    // // discard change if the sum is already smaller than the smallest coin
-    // if sum < coins.last().unwrap().to_owned() {
-    //     return None;
-    // }
-
-    // let mut remaining_amount = sum;
-    // let mut changes: Vec<usize> = Vec::new();
-
-    // for idx in 0..coins.len() {
-    //     let coin = coins[idx];
-    //     if remaining_amount == 0 {
-    //         break;
-    //     }
-    //     if coin > remaining_amount {
-    //         continue;
-    //     };
-
-    //     let coins = remaining_amount / coin;
-    //     remaining_amount = remaining_amount % coin;
-    //     let mut v = vec![coin; coins];
-    //     changes.append(v.as_mut());
-    // }
-    // if remaining_amount > 0 {
-    //     return None;
-    // }
-    // return Some(changes.len());
 }
 
 fn main() {
