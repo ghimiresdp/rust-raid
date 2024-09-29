@@ -69,3 +69,7 @@ path = "dp/longest_common_subsequence.rs"
 [[bin]]
 name = 'coin_change'
 path = 'dp/coin_change.rs'
+
+[[bin]]
+name = 'palindrome_partition'
+path = 'dp/palindrome_partition.rs'

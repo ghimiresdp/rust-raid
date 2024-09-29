@@ -21,7 +21,7 @@
 5. [Fibonacci Series](dp/fibonacci.rs) `cargo run --bin fibonacci`
 6. [Longest Common Subsequence](dp/longest_common_subsequence.rs) `cargo run --bin lcs`
 7. [Coin Change Problem](dp/coin_change.rs) `cargo run --bin coin_change`
-8. [Palindrome Partition]
+8. [Palindrome Partition](dp/palindrome_partition.rs) `cargo run --bin palindrome_partition`
 
 ### [4.3. Pro Level Problems](pro/)
 

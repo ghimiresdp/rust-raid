@@ -95,14 +95,14 @@ cargo test --bin huffman
 
 ### [4.2. Dynamic Programming](problem-solving/dp/)
 
-1. [List group by consecutive numbers](problem-solving/mid/consecutive_groups.rs) `cargo run --bin consecutive_groups`
-2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/mid/repeat.rs)`cargo run --bin repeat`
-3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/mid/two_sum.rs) `cargo run --bin two_sum`
-4. [Minimize the Sum from an array](problem-solving/mid/minimize_sum.rs) `cargo run --bin minimize_sum`
-5. [Fibonacci Series](./problem-solving/dp/fibonacci.rs) `cargo run --bin fibonacci`
-6. [Longest Common Subsequence](./problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
-7. [Coin Change Problem](./problem-solving/dp/coin_change.rs) `cargo run --bin coin_change`
-8. [Palindrome Partition]
+1. [List group by consecutive numbers](problem-solving/dp/consecutive_groups.rs) `cargo run --bin consecutive_groups`
+2. [Find the length of the longest substring with maximum 2 repetition](problem-solving/dp/repeat.rs)`cargo run --bin repeat`
+3. [Find the index of 2 numbers in an array whose sum equals to the provided target](problem-solving/dp/two_sum.rs) `cargo run --bin two_sum`
+4. [Minimize the Sum from an array](problem-solving/dp/minimize_sum.rs) `cargo run --bin minimize_sum`
+5. [Fibonacci Series](problem-solving/dp/fibonacci.rs) `cargo run --bin fibonacci`
+6. [Longest Common Subsequence](problem-solving/dp/longest_common_subsequence.rs) `cargo run --bin lcs`
+7. [Coin Change Problem](problem-solving/dp/coin_change.rs) `cargo run --bin coin_change`
+8. [Palindrome Partition](problem-solving/dp/palindrome_partition.rs) `cargo run --bin palindrome_partition`
 
 ### [4.3. Pro Level Problems](problem-solving/pro/)
 
