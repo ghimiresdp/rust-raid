@@ -4,7 +4,6 @@ resolver = "2"
 members = [
     "_lib",
     "algorithms",
-    "complexity-analysis",
     "data-structures",
     "design-patterns",
     "macros",

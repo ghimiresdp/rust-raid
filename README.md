@@ -104,19 +104,7 @@ cargo test --bin huffman
 7. [Coin Change Problem](problem-solving/dp/coin_change.rs) `cargo run --bin coin_change`
 8. [Palindrome Partition](problem-solving/dp/palindrome_partition.rs) `cargo run --bin palindrome_partition`
 
-### [4.3. Pro Level Problems](problem-solving/pro/)
-
-1. [Backtracking]
-2. [Divide and Conquer]
-3. [Branch and Bound]
-
-## [5. Complexity Analysis](./complexity-analysis/)
-
-### [5.1. Time Complexity analysis]
-
-### [5.2. Space Complexity analysis]
-
-## [6. Projects](./projects/)
+## [5. Projects](./projects/)
 
 > **Note**: Topics that do not contain hyperlinks are work in progress and will
 > be updated as soon as the solution gets completed.
