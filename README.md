@@ -106,6 +106,8 @@ cargo test --bin huffman
 
 ## [5. Projects](./projects/)
 
+1. [Python's `Pandas` like dataframe container](projects/pandas/README.md) `cargo run --bin pandas`
+
 > **Note**: Topics that do not contain hyperlinks are work in progress and will
 > be updated as soon as the solution gets completed.
 >

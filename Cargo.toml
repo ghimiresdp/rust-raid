@@ -3,11 +3,12 @@ resolver = "2"
 
 members = [
     "_lib",
+    # topics
     "algorithms",
     "data-structures",
     "design-patterns",
     "macros",
     "problem-solving",
+    # projects
     "projects/pandas",
-    "projects/snake",
 ]
