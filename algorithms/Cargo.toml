@@ -34,3 +34,7 @@ path = "sorting/quick_sort.rs"
 [[bin]]
 name = "huffman"
 path = "greedy/huffman_coding.rs"
+
+[[bin]]
+name = "kruskal"
+path = "greedy/kruskal.rs"

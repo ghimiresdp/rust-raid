@@ -26,17 +26,14 @@ List Of Algorithms are as follows:
 7. [Counting Sort]
 8. [Radix Sort]
 
-### Greedy Algorithms
+### Greedy and graph algorithms
 
 1. [Activity Selection]
 2. [Huffman Coding](greedy/huffman_coding.rs) `cargo run --bin huffman`
-3. [Krushkal's algorithm]
+3. [Krushkal's algorithm](greedy/kruskal.rs)  `cargo run --bin kruskal`
 4. [Prim's Algorithm]
-
-### Graph Algorithms
-
-1. [Dijkstra's Algorithm]
-2. [Bellman-Ford Algorithm]
-3. [Floyd-Warshall Algorithm]
-4. [Topological Sort]
-5. [A* Search Algorithm]
+5. [Dijkstra's Algorithm]
+6. [Bellman-Ford Algorithm]
+7. [Floyd-Warshall Algorithm]
+8. [Topological Sort]
+9. [A* Search Algorithm]
