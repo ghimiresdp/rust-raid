@@ -45,7 +45,7 @@
 ///    If the edge creates a cycle then reject the edge.
 /// 3. keep adding edges until we reach all vertices.
 ///```
-use std::{collections::HashMap, fmt::Debug};
+use std::collections::HashMap;
 
 /// # Edge
 ///
@@ -97,6 +97,15 @@ impl Graph {
             let parent_b = find_parent(&visited, b);
             println!("{parent_b}");
             if parent_a != parent_b {
+                if visited.contains_key(&a) && visited.contains_key(&b) {
+                    let val_a = visited.get(&a).unwrap();
+                    let val_b = visited.get(&b).unwrap();
+                    if visited.contains_key(val_a) {
+                        visited.insert(*val_b, b);
+                    } else {
+                        visited.insert(*val_a, a);
+                    }
+                }
                 edges.push((a, b, *weight));
                 if visited.contains_key(&a) {
                     visited.insert(b, a);
@@ -131,4 +140,29 @@ fn main() {
     ]);
     let updated_edges = graph.find_mst();
     println!("edges: {:?}", updated_edges)
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::Graph;
+
+    #[test]
+    fn test_1() {
+        let mut graph = Graph::new(vec![
+            ('A', 'B', 3),
+            ('B', 'C', 3),
+            ('C', 'D', 5),
+            ('D', 'A', 1),
+            ('B', 'D', 2),
+        ]);
+        let updated_edges = graph.find_mst();
+
+        assert_eq!(updated_edges.len(), 3);
+        // sometimes, due to ranking, the position of the first and second
+        // vertices of an edge may be interchanged.
+        assert_eq!(
+            updated_edges,
+            vec![('D', 'A', 1), ('D', 'B', 2), ('C', 'B', 3)]
+        )
+    }
 }
