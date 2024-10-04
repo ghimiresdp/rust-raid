@@ -58,16 +58,13 @@ cargo test --bin huffman
 
 1. [Activity Selection]
 2. [Huffman Coding](algorithms/greedy/huffman_coding.rs) `cargo run --bin huffman`
-3. [Krushkal's algorithm]
+3. [Krushkal's algorithm](algorithms/greedy/kruskal.rs) `cargo run --bin kruskal`
 4. [Prim's Algorithm]
-
-### [2.4. Graph Algorithms](algorithms/graph/)
-
-1. [Dijkstra's Algorithm]
-2. [Bellman-Ford Algorithm]
-3. [Floyd-Warshall Algorithm]
-4. [Topological Sort]
-5. [A* Search Algorithm]
+5. [Dijkstra's Algorithm]
+6. [Bellman-Ford Algorithm]
+7. [Floyd-Warshall Algorithm]
+8. [Topological Sort]
+9. [A* Search Algorithm]
 
 ## [3. Design Patterns](./design-patterns/README.md)
 
