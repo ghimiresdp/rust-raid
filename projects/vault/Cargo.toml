@@ -1,0 +1,9 @@
+[package]
+name = "vault"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.19", features = ["derive"] }
+directories = "5.0.1"
+rust-crypto = "0.2.36"

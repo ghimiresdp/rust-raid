@@ -12,4 +12,5 @@ members = [
     # projects
     "projects/pandas",
     "projects/ruscrypt",
+    "projects/vault",
 ]
