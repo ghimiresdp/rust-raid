@@ -1,7 +1,19 @@
 use clap::{Parser, Subcommand};
-use std::fs::File;
 use std::io::stdin;
+mod vault;
+use vault::Vault;
 
+/// This function reads input from the standard input (stdin) and returns it as a String.
+///
+/// # Parameters
+///
+/// * `prompt` - A string that is printed to the console before reading input. This is used to
+///              prompt the user for input.
+///
+/// # Return
+///
+/// * A String containing the input read from the console. The leading and trailing whitespace are
+///   trimmed from the input.
 fn input(prompt: &str) -> String {
     println!("{}", prompt);
     let mut input = String::new();
@@ -34,7 +46,8 @@ fn main() {
         Subcommands::Open { name } => {
             println!("opening the vault: {name}");
             let password = input("Enter password:");
-            println!("You entered: {password}");
+            let vault = Vault::open(name, password);
+            // println!("You entered: {password}");
         }
         Subcommands::Destroy => todo!(),
     }
