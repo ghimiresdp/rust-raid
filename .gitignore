@@ -3,3 +3,6 @@
 tmp/
 .vscode/
 db/
+
+// vault file
+*.vault

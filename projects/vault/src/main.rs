@@ -2,7 +2,6 @@ use clap::{Parser, Subcommand};
 use std::io::stdin;
 mod vault;
 use vault::Vault;
-
 /// This function reads input from the standard input (stdin) and returns it as a String.
 ///
 /// # Parameters
@@ -23,6 +22,11 @@ fn input(prompt: &str) -> String {
 
 #[derive(Subcommand, Debug)]
 enum Subcommands {
+    #[command(about = "Creates a new vault with the name provided or the default vault ")]
+    Create {
+        #[arg(short, long, default_value_t = String::from("default"))]
+        name: String,
+    },
     #[command(about = "Opens the vault with the name provided or the default vault ")]
     Open {
         #[arg(short, long, default_value_t = String::from("default"))]
@@ -42,12 +46,14 @@ struct Cli {
 fn main() {
     let command = Cli::parse();
 
-    match &command.subcommand {
+    match command.subcommand {
         Subcommands::Open { name } => {
             println!("opening the vault: {name}");
             let password = input("Enter password:");
-            let vault = Vault::open(name, password);
-            // println!("You entered: {password}");
+            Vault::open(name, password);
+        }
+        Subcommands::Create { name } => {
+            Vault::create(name);
         }
         Subcommands::Destroy => todo!(),
     }
