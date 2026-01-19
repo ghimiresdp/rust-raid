@@ -3,11 +3,11 @@
 //! To run/test, please run the following commands in your terminal
 //!
 //! ```sh
-//! cargo run --bin binary_search
+//! cargo run --bin binary-search
 //! ```
 //!
 //! ```sh
-//! cargo test --bin binary_search
+//! cargo test --bin binary-search
 //! ```
 //! Binary Searching algorithm uses divide and conquer method to recursively find
 //! out elements of a sorted array.

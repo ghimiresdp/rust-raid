@@ -47,12 +47,16 @@ path = "src/structures/trie.rs"
 # ================================[ Algorithms ]================================
 # Searching
 [[bin]]
-name = "linear_search"
+name = "linear-search"
 path = "src/algorithms/searching/linear_search.rs"
 
 [[bin]]
-name = "binary_search"
+name = "binary-search"
 path = "src/algorithms/searching/binary_search.rs"
+
+[[bin]]
+name = "jump-search"
+path = "src/algorithms/searching/jump_search.rs"
 
 # Sorting
 [[bin]]
