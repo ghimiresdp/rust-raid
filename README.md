@@ -120,16 +120,21 @@ cargo test --bin huffman
 1. [Linear Searching](crates/dsa/src/algorithms/searching/linear_search.rs)
 
    ```sh
-   cargo run --bin linear_search
+   cargo run --bin linear-search
    ```
 
 2. [Binary Searching](crates/dsa/src/algorithms/searching/binary_search.rs)
 
    ```sh
-   cargo run --bin binary_search
+   cargo run --bin binary-search
    ```
 
-3. [Jump Search]
+3. [Jump Search](crates/dsa/src/algorithms/searching/jump_search.rs)
+
+   ```sh
+   cargo run --bin jump-search
+   ```
+
 4. [Interpolation Search]
 
 #### [1.2.2. Sorting](crates/dsa/src/algorithms/sorting/)
@@ -190,7 +195,8 @@ cargo test --bin huffman
 8. [Topological Sort]
 9. [Depth First Search (DFS)](crates/dsa/src/algorithms/greedy/dfs.rs)
 
-   An example of a package manager to resolve and install dependencies using DFS approach.
+   An example of a package manager to resolve and install dependencies using DFS
+   algorithm.
 
    ```sh
    cargo run --bin dfs

@@ -2,11 +2,11 @@
 //! To run/test, please run the following commands in your terminal
 //!
 //! ```sh
-//! cargo run --bin linear_search
+//! cargo run --bin linear-search
 //! ```
 //!
 //! ```sh
-//! cargo test --bin linear_search
+//! cargo test --bin linear-search
 //! ```
 //!
 //! Linear searching algorithm is a sequential searching algorithm, where we
