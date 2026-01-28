@@ -58,6 +58,10 @@ path = "src/algorithms/searching/binary_search.rs"
 name = "jump-search"
 path = "src/algorithms/searching/jump_search.rs"
 
+[[bin]]
+name = "interpolation-search"
+path = "src/algorithms/searching/interpolation_search.rs"
+
 # Sorting
 [[bin]]
 name = "bubble_sort"
