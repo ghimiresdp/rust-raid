@@ -33,7 +33,6 @@
 
 use std::borrow::Cow;
 
-
 /// Sanitize String
 ///
 /// The following example demonstrates a function to remove whitespace from a
@@ -45,10 +44,9 @@ use std::borrow::Cow;
 /// cloning the data. This approach allows us to avoid unnecessary cloning of
 /// the string when it is not needed, while still providing the flexibility to
 /// modify the string when necessary.
-///
-fn sanitize_string(data: &str)-> Cow<'_, str>{
 
-    if data.contains(' '){
+fn sanitize_string(data: &str) -> Cow<'_, str> {
+    if data.contains(' ') {
         // only own the data when the data contains whitespaces.
         Cow::Owned(data.replace(" ", ""))
     } else {
@@ -67,10 +65,18 @@ fn main() {
     // here, `Cow` creates an owned variant and clones the data since it needs
     // modification, hence input 1 and output 1 has different memory location.
     println!("Input 1: '{}', Output 1: '{}'", input_1, output_1);
-    println!("address of Input 1: '{:p}', Output 1: '{:p}'", input_1.as_ptr(), output_1.as_ptr());
+    println!(
+        "address of Input 1: '{:p}', Output 1: '{:p}'",
+        input_1.as_ptr(),
+        output_1.as_ptr()
+    );
 
     // here, cow borrows immutable reference since it does not contain any
     // whitespace, hence input 2 and output 2 has same memory location
     println!("Input 2: '{}', Output 2: '{}'", input_2, output_2);
-    println!("address of Input 2: '{:p}', Output 2: '{:p}'", input_2.as_ptr(), output_2.as_ptr());
+    println!(
+        "address of Input 2: '{:p}', Output 2: '{:p}'",
+        input_2.as_ptr(),
+        output_2.as_ptr()
+    );
 }

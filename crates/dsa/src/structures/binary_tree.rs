@@ -37,6 +37,7 @@ use std::{cell::RefCell, fmt::Debug, rc::Rc};
 
 type Node<T> = Rc<RefCell<BinaryTree<T>>>;
 #[derive(Debug, Clone)]
+
 struct BinaryTree<T: Debug> {
     data: T,
     left: Option<Node<T>>,
