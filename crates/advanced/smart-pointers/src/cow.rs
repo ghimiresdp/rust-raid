@@ -80,3 +80,23 @@ fn main() {
         output_2.as_ptr()
     );
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sanitize() {
+        let input_1 = "Hello World";
+        let input_2 = "HelloWorld";
+
+        let output_1 = sanitize_string(input_1);
+        let output_2 = sanitize_string(input_2);
+
+        assert_eq!(output_1, "HelloWorld");
+        assert_eq!(output_2, "HelloWorld");
+
+        assert_ne!(input_1.as_ptr(), output_1.as_ptr());
+        assert_eq!(input_2.as_ptr(), output_2.as_ptr());
+    }
+}
