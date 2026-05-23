@@ -528,6 +528,12 @@ cargo run --bin operator-overloading
   cargo run --bin arc-mutex
   ```
 
+- [`Cow`](crates/advanced/smart-pointers/src/cow.rs)
+
+  ```sh
+  cargo run --bin cow
+  ```
+
 ### 4.9. Specialized topics
 
 - Writing a custom allocator

@@ -54,6 +54,8 @@ rust. The following topics will be discussed in this section:
 - [Box Pointers](smart-pointers/src/box.rs) `cargo run --bin box`
 - [Reference Counters (`Rc`)](smart-pointers/src/rc.rs) `cargo run --bin rc`
 - [`RefCell`](smart-pointers/src/refcell.rs)`cargo run --bin refcell`
+- [`Cow`](smart-pointers/src/cow.rs) `cargo run --bin cow`
+- [`Arc Mutex`](smart-pointers/src/arc-mutex.rs) `cargo run --bin arc-mutex`
 
 ## 5.9. Specialized topics
 
