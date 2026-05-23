@@ -468,7 +468,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "cget"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "clap",
  "futures-util",
@@ -536,7 +536,7 @@ checksum = "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
 
 [[package]]
 name = "concurrent-programming"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "futures",
  "rand",
@@ -695,7 +695,7 @@ dependencies = [
 
 [[package]]
 name = "design_patterns"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "console 0.15.11",
  "rand",
@@ -728,7 +728,7 @@ dependencies = [
 
 [[package]]
 name = "dsa"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "utils",
 ]
@@ -766,7 +766,7 @@ dependencies = [
 
 [[package]]
 name = "error-handling"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "fastrand"
@@ -1450,7 +1450,7 @@ checksum = "30bde2b3dc3671ae49d8e2e9f044c7c005836e7a023ee57cffa25ab82764bb9e"
 
 [[package]]
 name = "macros"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "shape",
  "shape_derive",
@@ -1464,11 +1464,11 @@ checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
 
 [[package]]
 name = "memory-management"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "meta-programming"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "xml-derive",
 ]
@@ -1606,11 +1606,11 @@ dependencies = [
 
 [[package]]
 name = "operator-overloading"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "pandas"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "parking_lot"
@@ -1705,7 +1705,7 @@ dependencies = [
 
 [[package]]
 name = "problem_solving"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "utils",
 ]
@@ -1891,7 +1891,7 @@ dependencies = [
 
 [[package]]
 name = "ruscrypt"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "rustc-demangle"
@@ -2064,11 +2064,11 @@ dependencies = [
 
 [[package]]
 name = "shape"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "shape_derive"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "quote",
  "syn",
@@ -2106,7 +2106,7 @@ checksum = "7fcf8323ef1faaee30a44a340193b1ac6814fd9b7b4e88e9d4519a3e4abe1cfd"
 
 [[package]]
 name = "smart-pointers"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "socket2"
@@ -2259,7 +2259,7 @@ dependencies = [
 
 [[package]]
 name = "todo"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "actix-files",
  "actix-web",
@@ -2422,7 +2422,7 @@ checksum = "1dccffe3ce07af9386bfd29e80c0ab1a8205a2fc34e4bcd40364df902cfa8f3f"
 
 [[package]]
 name = "types-and-generics"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "unicase"
@@ -2501,7 +2501,7 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 
 [[package]]
 name = "utils"
-version = "0.11.0"
+version = "0.12.0"
 
 [[package]]
 name = "v_htmlescape"
@@ -2511,7 +2511,7 @@ checksum = "4e8257fbc510f0a46eb602c10215901938b5c2a7d5e70fc11483b1d3c9b5b18c"
 
 [[package]]
 name = "vault"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "aes-gcm",
  "argon2",
@@ -2943,7 +2943,7 @@ checksum = "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51"
 
 [[package]]
 name = "xml-derive"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "quote",
  "syn",
